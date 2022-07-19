@@ -15,14 +15,15 @@
     <!-- Palavras-chave da página -->
     <meta name="keywords" content="Doação, caridade, instituição">
 
+     <!-- Inserindo o Bootstrap-->
+     <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/css/bootstrap.css"> 
+
     <!-- Linkando para CSS externo-->
     <link rel="stylesheet" href="style.css">
 
     <!-- Icons bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     
-    <!-- Inserindo o Bootstrap-->
-    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
 </head>
 <body>
   
@@ -39,7 +40,6 @@
                     <li><a href="contato.html" title="página contato">CONTATO</a></li>
                 </ul>
             </nav>
-
         </div>
     </header>
     <!-- Fim Menu -->
@@ -63,11 +63,7 @@
           <p class="mt-4 mt-lg-5 mt-xl-4 text-center p-xl-4"> As doações realizadas pelo <strong>PIX</strong>, são identificadas e compensadas no mesmo dia. Isso possibilita que com o valor arrecadado, já esteja na conta da nossa OSC ou disponível no dia seguinte.</p>
           <p>Flexibilidade: você pode sugerir valores mais baixos para doação sem sair no prejuízo com as altas taxas de processamento.</p>
       </div>
-      <!-- <div class="text-center col-md-6 mb-xxl-5">
-        <h2 class="mb-4"> LER QR CODE</h2>
-        <div class="mt-5 mt-md-5 mt-xl-0"><img src="img/icones/qrcode-quero-doar-min.png" title="QR CODE para fazer doação em dinheiro"></div>
-      </div> -->
-
+    
       <div class="text-center col-md-6 mb-xxl-5">
         <h2 class="mb-4 mb-md-4"> LER QR CODE</h2>
         <p class="text-center"><strong>Chave PIX:</strong> (11) 98312-5076</p>
@@ -75,7 +71,6 @@
         <div class="mt-4 mt-md-4 mt-lg-3 mt-xl-0"><a href="https://nubank.com.br/pagar/169vv5/n6vqpJGoOB"><img src="https://api.qrserver.com/v1/create-qr-code/?data=https://nubank.com.br/pagar/169vv5/n6vqpJGoOB &size=250x2500" title="QR CODE para fazer doação em dinheiro"></a></div>
 
       </div>
-      
     </section>
 
           
@@ -98,10 +93,7 @@
       </div>
     </div>
   </section>
-         
-         
-
-   
+      
   <!-- Espaço do conteudo e fomulário, seguir como esta no layout, as imagens ja estao na pasta-->
 
     <section class="container mt-lg-4 pt-4 sectionformulario" id="contato">
@@ -133,20 +125,7 @@
             </div>  
           </div>
           
-            
-            
-            
-              <!-- <select id="inputState" class="form-select bg-transparent ">
-                <option selected>O que deseja doar ? </option>
-                <option>Roupas</option>
-                <option>Calçados</option>
-                <option>Cobertores</option>
-              </select> -->
 
-
-
-
-              
               <h2 class="text-center">O que deseja doar?</h2>
            <section class="d-flex justify-content-between">
               <div class="form-check form-check-inline text-center">
@@ -196,9 +175,6 @@
             </div>
           </div>
 
-
-
-
           <div class="col-md-6">
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group ">
@@ -206,8 +182,6 @@
               <input type="text" class="form-control" id="inputAddress" placeholder="Complemento:" name="Complemento">
             </div>
           </div>
-
-          
 
           <div class="col-md-6">
             <label for="inputAddress" class="form-label"></label>
@@ -242,16 +216,8 @@
             <button type="submit" class="btn btn-primary" title="enviar formulário de doação de roupas">Enviar</button>
           </div>
 
-
       </form>
     </section>
-
-    
-
-
-
-
-
 
 
  <!-- Início Footer -->
@@ -277,9 +243,7 @@
          <!-- botao -->
          <button type="submit" class="btn btn-primary"><a href="quemsomos.html" class="branco" title="ir para página quem somos">Conheça Mais</a></button>
          <!-- botao -->
-           
          </div>
- 
  
         <!-- MAPA DO SITE -->
          <div class="col-md-3 mt-md-5 pt-md-3 col-lg-4 col-xl-2 ms-xl-4 ms-xxl-0 col-xxl-3 pt-lg-2 mb-4">
@@ -306,8 +270,6 @@
  
  
         <!-- CONTATO -->
-         <!--<div class= "pb-4 col-lg-2 col-xl-3 mx-auto mb-4">-->
- 
            <div class= "col-md-4 mt-md-5 pt-md-3 pb-4 col-lg-3 pt-lg-2 col-xl-3  mb-4">
  
            <h6 style="color: #1266f1;" class="text-uppercase fw-bold mb-4">
@@ -355,17 +317,10 @@
            </div>
          </div>
          <!-- FIM SIGA-NOS -->
- 
- 
-         <!--<div class="container-fluid bg-light ">
-            container q pega a tela inteira, tem a cor cinza e margin top 5 -->
-           
-           
+
          <!-- Grid column -->
        </div>
-     
      </div>
- 
    </section>
    <!-- FIM DA SESSÃO -->
  
@@ -378,8 +333,6 @@
  
  </footer>
  <!-- FIM DO Footer -->
-
-
 
     <!-- Vanilla Masker - para o formulário -->
     <script src="plugins/vanilla-masker.min.js"></script>
@@ -406,9 +359,6 @@
         VMasker(doc).maskPattern(docMask[0]);
         doc.addEventListener('input', inputHandler.bind(undefined, docMask, 14), false);
     </script>
-
-
-
 
     <!-- Formspree - script para envio do formulário -->
     <script>
@@ -544,10 +494,6 @@
 
         </script>
         
-
-
-
-
     <!-- Linkando para o JS -->
     <script src="js/menu.js"></script>
     <script src="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js"></script>
