@@ -125,7 +125,9 @@ svg:hover {
 svg {
     fill:#fff;
 }
-
+footer {
+    
+}
 
 /* MENU RESPONSIVO */
 @media screen and (min-width: 951px ) {
@@ -139,13 +141,30 @@ svg {
     .menu a{
         padding:  0 1rem;
     }
+    html p {
+        font-size: 1rem;
+    }
 }
 
+@media screen and (min-width: 1550px){
+    html p {
+        font-size: 1.25rem;
+    }
+    
+}
+@media screen and (min-width: 1820px){
+    .conteudo {
+        padding-top: 60px;
+     }
+    
+}
 
 @media screen and (max-width: 1000px) {
 
+    
     .delcelulares {
             display: none;
     }
+    
   
 }
