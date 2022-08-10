@@ -1,18 +1,17 @@
-### COMANDOS SQL
+### COMANDOS SQL 
 
-## modelagem fisica:
+## Modelagem Física:
 
-# criar banco de dados:
+# Criar banco de dados:
 
 ``` sql
 CREATE DATABASE calordado CHARACTER SET utf8mb4;
 
 ```
 
-# criar tabelas: admin
+# Criar tabelas: admin
 
-
-``` sql
+``` SQL
 CREATE TABLE admin(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(45) UNIQUE NOT NULL,
@@ -20,22 +19,22 @@ CREATE TABLE admin(
 );
 ```
 
-# criar tabelas: contato_meu_perfil
+# Criar tabelas: contato_meu_perfil
 
-``` sql
+``` SQL
 CREATE TABLE contato_meu_perfil(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     endereco VARCHAR(80) NOT NULL,
-    cep VARCHAR(20) NOT NULL,
+    cep VARCHAR(8) NOT NULL,
     cidade VARCHAR(45) NOT NULL,
-    numero_casa VARCHAR(15) NOT NULL,
+    numero_casa VARCHAR(5) NOT NULL,
     usuario_id INT NOT NULL
 );
 ```
 
-# criar tabelas: usuarios
+# Criar tabela: usuarios
 
-``` sql
+``` SQL
 CREATE TABLE usuarios(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45) NOT NULL,
@@ -43,10 +42,9 @@ CREATE TABLE usuarios(
     senha VARCHAR(255) NOT NULL
 );
 ```
+# Criar tabela: quero_doar 
 
-# criar tabela: quero_doar 
-
-``` sql
+``` SQL
 CREATE TABLE quero_doar(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     doacao ENUM('roupas', 'cobertores', 'calcados') NOT NULL,
@@ -54,18 +52,17 @@ CREATE TABLE quero_doar(
 
 );
 ```
+# Criar relacionamento entre usuarios e contato_meu_perfil:
 
-# criar relacionamento entre usuarios e contato_meu_perfil:
-
-``` sql
+``` SQL
 ALTER TABLE contato_meu_perfil
     ADD CONSTRAINT fk_contato_meu_perfil_usuarios
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id);
 ```
 
-# criar relacionamento entre: quero_doar e usuarios
+# Criar relacionamento entre: quero_doar e usuarios
 
-```sql
+``` SQL
   ALTER TABLE quero_doar
   ADD CONSTRAINT fk_quero_doar_usuarios
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id);
