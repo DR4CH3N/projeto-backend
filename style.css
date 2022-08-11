@@ -12,6 +12,7 @@
 /* formatando imagens */
 img, iframe {
     max-width: 100%;
+    border-radius: 20px;
 }
 
 body {
@@ -29,6 +30,7 @@ html {
 /* determinando fonte */
 h1, h2, h6 {
     font-family: 'Oswald', sans-serif;
+    color: rgb(0, 134, 221);
 }
 
 p {
@@ -111,10 +113,6 @@ header .limitador {
     color: #333;
 }
 
-/* MENU STICKY */
-.menu {
-    z-index: 20;
-}
 
 .copy {
     background-color: rgb(77, 72, 72);
@@ -125,8 +123,14 @@ svg:hover {
 svg {
     fill:#fff;
 }
-footer {
-    
+
+.btn {
+    background-color:  rgb(0, 134, 221);
+    color: #fff;
+    border: black;
+}
+.btn:hover {
+    background-color: rgb(0, 134, 221);
 }
 
 /* MENU RESPONSIVO */
