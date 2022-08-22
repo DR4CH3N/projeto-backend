@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Ago-2022 às 15:55
+-- Tempo de geração: 22-Ago-2022 às 13:44
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.5
 
@@ -44,10 +44,10 @@ INSERT INTO `admin` (`id`, `email`, `senha`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contato_meu_perfil`
+-- Estrutura da tabela `cadastro`
 --
 
-CREATE TABLE `contato_meu_perfil` (
+CREATE TABLE `cadastro` (
   `id` int(11) NOT NULL,
   `endereco` varchar(80) NOT NULL,
   `cep` varchar(8) NOT NULL,
@@ -57,33 +57,25 @@ CREATE TABLE `contato_meu_perfil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `contato_meu_perfil`
+-- Extraindo dados da tabela `cadastro`
 --
 
-INSERT INTO `contato_meu_perfil` (`id`, `endereco`, `cep`, `cidade`, `numero_casa`, `usuario_id`) VALUES
+INSERT INTO `cadastro` (`id`, `endereco`, `cep`, `cidade`, `numero_casa`, `usuario_id`) VALUES
 (5, 'Rua nove de julho', '08505-00', 'Ferraz de Vasconcelos', '1000', 2),
 (6, 'Rua nove de novembro', '0800-000', 'São Paulo', '1500', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `quero_doar`
+-- Estrutura da tabela `doacoes`
 --
 
-CREATE TABLE `quero_doar` (
+CREATE TABLE `doacoes` (
   `id` int(11) NOT NULL,
-  `doacao` enum('roupas','cobertores','calcados') NOT NULL,
+  `doacao` set('roupas','cobertores','calcados') NOT NULL,
+  `Quantidade` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `quero_doar`
---
-
-INSERT INTO `quero_doar` (`id`, `doacao`, `usuario_id`) VALUES
-(1, 'roupas', 1),
-(2, 'cobertores', 2),
-(3, 'calcados', 1);
 
 -- --------------------------------------------------------
 
@@ -118,16 +110,16 @@ ALTER TABLE `admin`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices para tabela `contato_meu_perfil`
+-- Índices para tabela `cadastro`
 --
-ALTER TABLE `contato_meu_perfil`
+ALTER TABLE `cadastro`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_contato_meu_perfil_usuarios` (`usuario_id`);
+  ADD KEY `fk_cadastro_usuarios` (`usuario_id`) USING BTREE;
 
 --
--- Índices para tabela `quero_doar`
+-- Índices para tabela `doacoes`
 --
-ALTER TABLE `quero_doar`
+ALTER TABLE `doacoes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_quero_doar_usuarios` (`usuario_id`);
 
@@ -149,16 +141,16 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `contato_meu_perfil`
+-- AUTO_INCREMENT de tabela `cadastro`
 --
-ALTER TABLE `contato_meu_perfil`
+ALTER TABLE `cadastro`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de tabela `quero_doar`
+-- AUTO_INCREMENT de tabela `doacoes`
 --
-ALTER TABLE `quero_doar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `doacoes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
@@ -171,15 +163,15 @@ ALTER TABLE `usuarios`
 --
 
 --
--- Limitadores para a tabela `contato_meu_perfil`
+-- Limitadores para a tabela `cadastro`
 --
-ALTER TABLE `contato_meu_perfil`
+ALTER TABLE `cadastro`
   ADD CONSTRAINT `fk_contato_meu_perfil_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
 
 --
--- Limitadores para a tabela `quero_doar`
+-- Limitadores para a tabela `doacoes`
 --
-ALTER TABLE `quero_doar`
+ALTER TABLE `doacoes`
   ADD CONSTRAINT `fk_quero_doar_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
 COMMIT;
 

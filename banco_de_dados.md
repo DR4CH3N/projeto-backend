@@ -22,7 +22,7 @@ CREATE TABLE admin(
 # Criar tabelas: contato_meu_perfil
 
 ``` SQL
-CREATE TABLE contato_meu_perfil(
+CREATE TABLE cadastro(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     endereco VARCHAR(80) NOT NULL,
     cep VARCHAR(8) NOT NULL,
@@ -45,25 +45,30 @@ CREATE TABLE usuarios(
 # Criar tabela: quero_doar 
 
 ``` SQL
-CREATE TABLE quero_doar(
+CREATE TABLE doacoes(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     doacao ENUM('roupas', 'cobertores', 'calcados') NOT NULL,
     usuario_id INT NOT NULL
-
 );
 ```
 # Criar relacionamento entre usuarios e contato_meu_perfil:
 
 ``` SQL
-ALTER TABLE contato_meu_perfil
-    ADD CONSTRAINT fk_contato_meu_perfil_usuarios
+ALTER TABLE cadastro
+    ADD CONSTRAINT fk_cadastro_usuarios
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id);
 ```
 
 # Criar relacionamento entre: quero_doar e usuarios
 
 ``` SQL
-  ALTER TABLE quero_doar
-  ADD CONSTRAINT fk_quero_doar_usuarios
+  ALTER TABLE cadastro
+  ADD CONSTRAINT fk_cadastro_usuarios
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id);
+```
+
+# Adicionar campo quantidade na tabela doações
+
+``` sql
+ALTER TABLE `cadastro` ADD `Quantidade` INT NOT NULL AFTER `doacao`;
 ```
