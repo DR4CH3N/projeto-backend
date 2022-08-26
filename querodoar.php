@@ -1,4 +1,21 @@
+<?php
+use CalorDado\Cadastro;
+use CalorDado\Utilitarios;
+require_once "./vendor/autoload.php";
+$dados = new Cadastro;
+$listaDeDados = $dados->listarCadastro();
+if(isset($_POST['enviar'])){
+  $cadastro = new Cadastro;
+  $cadastro->setEndereco($_POST['endereco']);
+  $cadastro->setNumero($_POST['numero']);
+  $cadastro->setCep($_POST['cep']);
+  $cadastro->setComplemento($_POST['complemento']);
+  $cadastro->setBairro($_POST['bairro']);
+  $cadastro->setCidade($_POST['cidade']);
+  $cadastro->inserir();
+}
 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -98,7 +115,8 @@
       
   <!-- Espaço do conteudo e fomulário, seguir como esta no layout, as imagens ja estao na pasta-->
 
-    <section class="container mt-lg-4 pt-4" id="contato">
+    <section class="container mt-lg-4 pt-4" 
+    >
       <form action="" method="post" id="formulario" class="row g-3">
         <h2 class="text-center mt-5 mt-md-0">QUERO FAZER MINHA DOAÇÃO</h2> 
 
@@ -204,7 +222,7 @@
           <a href="lgpd.html" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a>
           
           <div class="col-12 mt-4 mb-4 text-end">
-            <button  type="submit" class="btn btn-primary">Enviar</button>
+            <button name="enviar" type="submit" class="btn btn-primary">Enviar</button>
           </div>
 
       </form>
