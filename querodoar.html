@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,7 +37,7 @@
                 <ul class="menu"></a>
                     <li><a href="index.html" title="página inicial">Home</a></li>
                     <li><a href="quemsomos.html" title="página quem somos">QUEM SOMOS</a></li>
-                    <li><a href="querodoar.html" title="página quero doar">QUERO DOAR</a></li>
+                    <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
                     <li><a href="contato.html" title="página contato">CONTATO</a></li>
                 </ul>
             </nav>
@@ -155,7 +156,7 @@
             <label for="inputPassword4" class="form-label"></label> 
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
-              <input type="text" class="form-control" id="inputPassword4" placeholder="Endereço:" name="Endereço">
+              <input type="text" class="form-control" id="inputPassword4" placeholder="Endereço:" name="endereco">
             </div>  
           </div>
           
@@ -163,7 +164,7 @@
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="number" class="form-control" id="inputAddress" placeholder="Número:" name="Número">
+              <input type="number" class="form-control" id="inputAddress" placeholder="Número:" name="numero">
             </div>
           </div>
 
@@ -172,7 +173,7 @@
             <label for="inputEmail4" class="form-label"></label>
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="number" class="form-control" id="inputEmail4" maxlength="9" placeholder="CEP: " name="CEP">
+              <input type="number" class="form-control" id="inputEmail4" maxlength="9" placeholder="CEP: " name="cep">
             </div>
           </div>
 
@@ -180,7 +181,7 @@
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Complemento:" name="Complemento">
+              <input type="text" class="form-control" id="inputAddress" placeholder="Complemento:" name="complemento">
             </div>
           </div>
 
@@ -188,33 +189,22 @@
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-house-fill"></i></div>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Bairro:" name="Bairro">
+              <input type="text" class="form-control" id="inputAddress" placeholder="Bairro:" name="bairro">
             </div>
           </div>
 
-          <div class="col-12 col-md-6">
+          <div class="col-12 ">
             <label for="inputCity" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-house-door-fill"></i></div>
-              <input type="text" class="form-control" id="inputCity" placeholder="Cidade: " name="Cidade">
+              <input type="text" class="form-control" id="inputCity" placeholder="Cidade: " name="cidade">
             </div>
-          </div>
-
-          <div class="col-md-6">
-            <label for="inputState" class="form-label"></label>
-            <div class="input-group ">
-              <div class="input-group-text bg-transparent"><i class="bi bi-bank"></i></div>
-              <select id="inputState" class="form-select" name="Estado">
-                <option selected></option>
-                <option>São Paulo</option>
-              </select>
-            </div>  
           </div>
       
           <a href="lgpd.html" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a>
           
           <div class="col-12 mt-4 mb-4 text-end">
-            <button type="submit" class="btn btn-primary" title="enviar formulário de doação de roupas">Enviar</button>
+            <button name="enviar" type="submit" class="btn btn-primary" title="enviar formulário de doação de roupas">Enviar</button>
           </div>
 
       </form>
