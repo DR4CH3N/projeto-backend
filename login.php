@@ -17,6 +17,9 @@
   
   <!-- Inserindo o Bootstrap-->
   <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
+  
+  <!-- Icons bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
   <!-- Linkando para CSS externo-->
   <link rel="stylesheet" href="style.css">
@@ -45,23 +48,47 @@
    <article>
    <div class="row">
     <div class="bg-white rounded shadow col-12 my-1 py-4">
-        <h2 class="text-center fw-light">Acesso à área administrativa</h2>
+        <div class="text-center">
+          <img src="img/img-logos/Favicon_png-min.png" alt="">
+        </div>
+        <h2 class="text-center fw-light">Inscrever-se</h2>
 
-        <form action="" method="post" id="form-login" name="form-login" class="mx-auto w-50">
-				<div class="mb-3">
-					<label for="email" class="form-label">E-mail:</label>
-					<input class="form-control" type="email" id="email" name="email">
-				</div>
-				<div class="mb-3">
-					<label for="senha" class="form-label">Senha:</label>
-					<input class="form-control" type="password" id="senha" name="senha">
-				</div>
+        <form>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" />
+            <label class="form-label" for="form3Example3">Email address</label>
+          </div>
 
-				<button class="btn btn-primary btn-lg" name="entrar" type="submit">Entrar</button>
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" id="form3Example4" class="form-control form-control-lg"
+              placeholder="Enter password" />
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
 
-			</form>
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Remember me
+              </label>
+            </div>
+            <a href="#!" class="text-body">Forgot password?</a>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                class="link-danger">Register</a></p>
+          </div>
+
+        </form>
    </article> 
-
+   
 
   <!-- Início Footer -->
   <footer class="text-center">
