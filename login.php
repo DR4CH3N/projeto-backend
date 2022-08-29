@@ -46,52 +46,55 @@
   <!-- Fim do cabeçalho -->
 
    <article>
-   <div class="row">
-    <div class="bg-white rounded shadow col-12 my-1 py-4">
+   <div class="row bg-black  ">
+    <div class="m-auto col-11 my-1 py-4">
         <div class="text-center">
           <img src="img/img-logos/Favicon_png-min.png" alt="">
         </div>
-        <h2 class="text-center fw-light">Inscrever-se</h2>
+        <h2 class="text-center text-white  mb-4">Entrar</h2>
 
         <form>
           <!-- Email input -->
-          <div class="form-outline mb-4">
+          <div class="form-outline mb-2">
             <input type="email" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" />
-            <label class="form-label" for="form3Example3">Email address</label>
+              placeholder="Email " />
+            <label class="form-label" for="form3Example3"></label>
           </div>
 
           <!-- Password input -->
-          <div class="form-outline mb-3">
+          <div class="form-outline mb-2">
             <input type="password" id="form3Example4" class="form-control form-control-lg"
-              placeholder="Enter password" />
-            <label class="form-label" for="form3Example4">Password</label>
+              placeholder="Senha" />
+            <label class="form-label" for="form3Example4"></label>
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
             <!-- Checkbox -->
-            <div class="form-check mb-0">
+            <div class="form-check col-7 ">
               <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
-                Remember me
+              <label class="form-check-label text-white" for="form2Example3">
+                Mantenha-me conectado
               </label>
             </div>
-            <a href="#!" class="text-body">Forgot password?</a>
+            <a href="#!" class="politica col-5 text-end">Esqueceu a senha ?</a>
           </div>
 
-          <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="button" class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                class="link-danger">Register</a></p>
+          <div class="text-center text-lg-start mt-4 ">
+            <button type="button" class="btn btn-primary col-12 btn-lg"
+              >Entrar</button> 
           </div>
+          <div class="d-flex justify-content-between align-items-center">
+              <p class="small mt-2 pt-1 mb-0 text-white">Não tem uma conta ainda? </p>
+              <a href="#!"
+                class="politica ">Inscrever-se</a>
+          </div> 
 
         </form>
    </article> 
    
 
   <!-- Início Footer -->
-  <footer class="text-center">
+  <footer class="text-center ">
     <section class="container-fluid row m-auto border-top">
       <div class="col-md-4 col-xl-4 col-xxl-4 mt-5 ms-md-3 ms-xl-0 ms-xxl-4 ps-xxl-5 pt-xxl-2">
         <img src="img/img-logos/coracao_logo_1.ico" alt="Logo-calor-dado">
