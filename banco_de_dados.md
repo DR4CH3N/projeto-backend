@@ -72,3 +72,8 @@ ALTER TABLE cadastro
 ``` sql
 ALTER TABLE `cadastro` ADD `Quantidade` INT NOT NULL AFTER `doacao`;
 ```
+
+## adicionar tipo de usuario na tabela usuarios
+```sql
+ALTER TABLE `usuarios` ADD `Tipo` ENUM('admin', 'usuario') NOT NULL AFTER `senha`;
+```
