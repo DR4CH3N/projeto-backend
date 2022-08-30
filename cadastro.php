@@ -50,8 +50,8 @@
 
   <section class="row d-flex justify-content-center ">
     <div class=" row delimagens text-center  col-lg-6 my-2">
-      <h1 class="mb-4 mt-4">Bem-Vindo de volta!</h1>
-      <p>Para se manter conectado conosco faça login com suas informações pessoais.</p>
+      <h1 class="mb-4 mt-5">Bem-Vindo de volta!</h1>
+      <p class="p-4">Para se manter conectado conosco faça login com suas informações pessoais.</p>
       <div>
         <img src="img/icones/img-login-desk.png" alt=""> 
       </div>  
@@ -61,9 +61,14 @@
         <div class="text-center">
           <img src="img/img-logos/Favicon_png-min.png" alt="">
         </div>
-        <h2 class="text-center text-white  mb-4">Entrar</h2>
+        <h2 class="text-center text-white  mb-4">Inscrever-se</h2>
 
         <form>
+           <div class="form-outline mb-2">
+            <input type="text" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Nome " />
+            <label class="form-label" for="form3Example3"></label>
+          </div>
           <!-- Email input -->
           <div class="form-outline mb-2">
             <input type="email" id="form3Example3" class="form-control form-control-lg"
@@ -75,6 +80,12 @@
           <div class="form-outline mb-2">
             <input type="password" id="form3Example4" class="form-control form-control-lg"
               placeholder="Senha" />
+            <label class="form-label" for="form3Example4"></label>
+          </div>
+
+          <div class="form-outline mb-2">
+            <input type="password" id="form3Example4" class="form-control form-control-lg"
+              placeholder="Confirmar senha" />
             <label class="form-label" for="form3Example4"></label>
           </div>
 
@@ -91,12 +102,12 @@
 
           <div class="text-center text-lg-start mt-4 ">
             <button type="button" class="btn btn-primary col-12 btn-lg"
-              >Entrar</button> 
+              >Inscrever-se</button> 
           </div>
           <div class="d-flex justify-content-between align-items-center">
-              <p class="small mt-2 pt-1 mb-0 text-white">Não tem uma conta ainda? </p>
-              <a href="cadastro.php"
-                class="politica ">Inscrever-se</a>
+              <p class="small mt-2 pt-1 mb-0 text-white">Já tem uma conta? </p>
+              <a href="login.php"
+                class="politica ">Entrar</a>
           </div> 
         </form>
       </div>  
