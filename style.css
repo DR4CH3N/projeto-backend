@@ -73,7 +73,7 @@ nav, nav p {
     font-family: 'Roboto', sans-serif;
     background-color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     height: 50px; /* DISTANCIA ENTRE OS ITENS */
     align-items: center; /* POSICAO DO TEXTO DENTRO DO A */
 }
@@ -90,7 +90,7 @@ nav, nav p {
 /* configuraçao do menu mobile do js */
 .menu-aberto {
     display: block;
-    position: absolute;
+    position: sticky;
     right: 0;
     left: 0;
 }
@@ -118,7 +118,9 @@ header .limitador {
     color: #333;
 }
 
-
+.login{
+    background-color: #eff7fd;
+}
 .copy {
     background-color: rgb(77, 72, 72);
 }
