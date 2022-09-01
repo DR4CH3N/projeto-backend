@@ -16,12 +16,15 @@ if (isset($_POST['entrar'])) {
       if(password_verify($_POST['senha'], $dados['senha'])){
         $sessao = new ControleDeAcesso;
 				$sessao->login($dados['id'], $dados['nome'], $dados['tipo']);
-        header("location:querodoar.php");
+        if($_SESSION['tipo'] === 'admin'){
+          header("location:admin/index.php");
+        } else {
+          header("location:querodoar.php");
+        }
       } else {
         header("location:login.php?senha_incorreta");
       }
     }
-
   }
 } 
 if (isset($_GET['acesso_proibido'])) {
@@ -76,11 +79,8 @@ if (isset($_GET['acesso_proibido'])) {
           <ul class="menu"></a>
             <li><a href="index.html" title="página inicial">Home</a></li>
             <li><a href="quemsomos.html" title="página quem somos">QUEM SOMOS</a></li>
-          <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
-          <li><a href="contato.html" title="página contato">CONTATO</a></li>
-          <li>
-                <a class="nav-link fw-bold" href="?sair"> <i class="bi bi-x-circle"></i> Sair</a>
-            </li>
+            <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
+            <li><a href="contato.html" title="página contato">CONTATO</a></li>
           </ul>
       </nav>
     </div>
@@ -125,7 +125,7 @@ if (isset($_GET['acesso_proibido'])) {
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
-            <a href="#!" class="politica col-5 text-start">Esqueceu a senha ?</a>
+            <a href="#!" class="politica col-12 text-start">Esqueceu a senha ?</a>
           </div>
 
           <button class="btn btn-primary btn-lg mt-3 col-12" name="entrar" type="submit">Entrar</button>
@@ -133,7 +133,7 @@ if (isset($_GET['acesso_proibido'])) {
           <div class="d-flex justify-content-between align-items-center">
               <p class="small mt-2 pt-1 mb-0 text-white">Não tem uma conta ainda? </p>
               <a href="cadastro.php"
-                class="politica ">Inscrever-se</a>
+                class="politica col-6 text-end">Inscrever-se</a>
                
           </div> 
         </form>

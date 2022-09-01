@@ -28,7 +28,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
     
 <header id="topo" class="border-bottom sticky-top">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
   <div class="container">
     <h1><a class="navbar-brand" href="index.php"><i class="bi bi-unlock"></i> Admin | Calor Dado</a></h1>
 
@@ -45,14 +45,12 @@ $pagina = basename($_SERVER['PHP_SELF']);
             <li class="nav-item">
                 <a class="nav-link" href="meu-perfil.php">Meu perfil</a>
             </li>
-            <?php if($_SESSION['tipo'] === 'admin') { ?>
             <li class="nav-item">
                 <a class="nav-link" href="categorias.php">Doações</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="usuarios.php">Usuários</a>
             </li>            
-            <?php }  ?>
             <li class="nav-item">
                 <a class="nav-link fw-bold" href="?sair"> <i class="bi bi-x-circle"></i> Sair</a>
             </li>
