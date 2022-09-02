@@ -88,6 +88,7 @@ if (isset($_POST['enviar'])) {
 
 </head>
 <body>
+
     <!-- Menu --> 
     <header>
         <div class="limitador">
@@ -143,13 +144,12 @@ if (isset($_POST['enviar'])) {
           <input type="tel" class="form-control" id="inputPassword4" placeholder="Telefone:" name="telefone">
         </div>  
       </div>
-      <div class="my-2 mb-3">
-        <label for="inputPassword4" class="form-label"></label> 
-        <div class="input-group">
-          <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-paper-fill"></i></div>
-         <textarea  placeholder="Digite aqui sua menssagem:" name="mensagem" id="mensagem" rows="3" class="form-control"></textarea>
-        </div>  
-      </div>
+
+    	<div class="mb-3">
+				<label class="form-label" for="resumo">Resumo (máximo de 300 caracteres):</label>
+				<span id="maximo" class="badge bg-danger">0</span>
+				<textarea class="form-control" required name="resumo" id="resumo" cols="50" rows="2" maxlength="300"></textarea>
+			</div>
 
       
       
@@ -238,6 +238,7 @@ if (isset($_POST['enviar'])) {
 
 <!-- Linkando para o JS -->
     <script src="js/menu.js"></script>
+    <script src="js/contador.js"></script>
     <script src="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js"></script>
 </body>
 </html>
