@@ -6,11 +6,9 @@ $usuario = new Usuario;
 if(isset($_POST['inscrever'])){
   $usuario->setNome($_POST['nome']);
   $usuario->setEmail($_POST['email']);
-
   $usuario->setTipo('usuario');
-  
   if($_POST['senha'] === $_POST['senha-confirma']) {
-    $usuario->setSenha( $_POST['senha']);
+    $usuario->setSenha($usuario->codificaSenha($_POST['senha']));
     $usuario->inserir();
     header("location:login.php");
 }

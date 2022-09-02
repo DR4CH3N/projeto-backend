@@ -2,20 +2,20 @@
 use CalorDado\Cadastro;
 use CalorDado\Utilitarios;
 require_once "./vendor/autoload.php";
-$dados = new Cadastro;
-$listaDeDados = $dados->listarCadastro();
+$cadastro = new Cadastro;
+/* 
 if(isset($_POST['enviar'])){
-  $cadastro = new Cadastro;
+  $cadastro->setTelefone($_POST['telefone']);
   $cadastro->setEndereco($_POST['endereco']);
   $cadastro->setNumero($_POST['numero']);
   $cadastro->setCep($_POST['cep']);
   $cadastro->setComplemento($_POST['complemento']);
   $cadastro->setBairro($_POST['bairro']);
   $cadastro->setCidade($_POST['cidade']);
-  $cadastro->inserir();
-}
-
+  $cadastro->InserirCadastro();
+} */
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -125,7 +125,7 @@ if(isset($_POST['enviar'])){
 
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-person-fill"></i></div>
-              <input type="text" class="form-control" id="inputEmail4" placeholder="Nome:" name="Nome">
+              <input type="text" class="form-control" id="nome" placeholder="Nome:" name="nome">
             </div>
           </div>
 
@@ -133,7 +133,7 @@ if(isset($_POST['enviar'])){
             <label for="inputPassword4" class="form-label"></label>
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-telephone-fill"></i></div>
-              <input type="tel" class="form-control" id="inputPassword4" placeholder="Tefefone:" name="Telefone">
+              <input type="tel" class="form-control" id="telefone" placeholder="Tefefone:" name="telefone">
             </div>  
           </div>
 
@@ -141,7 +141,7 @@ if(isset($_POST['enviar'])){
             <label for="inputPassword4" class="form-label"></label> 
             <div class="input-group">
               <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-fill"></i></div>
-              <input type="email" class="form-control" id="inputPassword4" placeholder="E-mail:" name="E-mail">
+              <input type="email" class="form-control" id="email" placeholder="E-mail:" name="email">
             </div>  
           </div>
           
@@ -149,18 +149,18 @@ if(isset($_POST['enviar'])){
               <h2 class="text-center">O que deseja doar?</h2>
            <section class="d-flex justify-content-between">
               <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Roupas">
-                <label class="form-check-label" for="inlineCheckbox1">Roupas</label>
+                <input class="form-check-input" type="checkbox" id="roupas" name="roupas" value="Roupas">
+                <label class="form-check-label" for="roupas">Roupas</label>
               </div>
 
               <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Cobertores">
-                <label class="form-check-label" for="inlineCheckbox2">Cobertores</label>
+                <input class="form-check-input" type="checkbox" id="cobertores" value="Cobertores">
+                <label class="form-check-label" for="cobertores">Cobertores</label>
               </div>
 
               <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Calçados">
-                <label class="form-check-label" for="inlineCheckbox3">Calçados</label>
+                <input class="form-check-input" type="checkbox" id="calcados" name="calcados" value="Calçados">
+                <label class="form-check-label" for="calcados">Calçados</label>
               </div>
            </section>
 
@@ -174,7 +174,7 @@ if(isset($_POST['enviar'])){
             <label for="inputPassword4" class="form-label"></label> 
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
-              <input type="text" class="form-control" id="inputPassword4" placeholder="Endereço:" name="endereco">
+              <input type="text" class="form-control" id="endereco" placeholder="Endereço:" name="endereco">
             </div>  
           </div>
           
@@ -182,7 +182,7 @@ if(isset($_POST['enviar'])){
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="number" class="form-control" id="inputAddress" placeholder="Número:" name="numero">
+              <input type="number" class="form-control" id="numero" placeholder="Número:" name="numero">
             </div>
           </div>
 
@@ -191,7 +191,7 @@ if(isset($_POST['enviar'])){
             <label for="inputEmail4" class="form-label"></label>
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="number" class="form-control" id="inputEmail4" maxlength="9" placeholder="CEP: " name="cep">
+              <input type="number" class="form-control" id="cep" maxlength="9" placeholder="CEP: " name="cep">
             </div>
           </div>
 
@@ -199,7 +199,7 @@ if(isset($_POST['enviar'])){
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Complemento:" name="complemento">
+              <input type="text" class="form-control" id="complemento"  placeholder="Complemento:" name="complemento">
             </div>
           </div>
 
@@ -207,7 +207,7 @@ if(isset($_POST['enviar'])){
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-house-fill"></i></div>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Bairro:" name="bairro">
+              <input type="text" class="form-control" id="bairro" placeholder="Bairro:" name="bairro">
             </div>
           </div>
 
@@ -215,14 +215,14 @@ if(isset($_POST['enviar'])){
             <label for="inputCity" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-house-door-fill"></i></div>
-              <input type="text" class="form-control" id="inputCity" placeholder="Cidade: " name="cidade">
+              <input type="text" class="form-control" id="cidade" placeholder="Cidade: " name="cidade">
             </div>
           </div>
       
           <a href="lgpd.html" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a>
           
           <div class="col-12 mt-4 mb-4 text-end">
-            <button name="enviar" type="submit" class="btn btn-primary">Enviar</button>
+            <button name="enviar" type="submit" id="enviar" class="btn btn-primary">Enviar</button>
           </div>
 
       </form>
