@@ -4,114 +4,116 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calor Dado - Contato</title>
+    <title>Calor Dado - Quem somos</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/img-logos/Favicon_png-min.png">
 
     <!-- Descrição resumida da página -->
-    <meta name="description" content="Entre em contato caso tenha uma dúvida ou uma ideia que possamos trabalhar juntos para ajudar o próximo.">
-    
-    <!-- Palavras-chave da página -->
-    <meta name="keywords" content="União, equipe, informações">
+    <meta name="description" content="A calor Dado tem como objetivo ajudar as pessoas com doações de roupas,cobertores e calçados, com foco para que em tempos de inverno possamos ajudar as pessoas de extrema necessidade.">
+
+    <!-- Palavras-chave de página -->
+    <meta name="keywords" content="Empatia, Solidariedade, Esperança.">
 
     <!-- Inserindo o Bootstrap-->
     <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
 
     <!-- Linkando para CSS externo-->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Icons bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-
 </head>
 <body>
-    <!-- Menu --> 
+
+    <!-- Início do cabeçalho --> 
     <header>
         <div class="limitador">
-            <a href="index.html" title="Página Inicial"><img src="img/img-logos/logo-calor-dado-min.png" alt=""></a>
+            <a href="index.html" title="Página Inicial"><img src="img/img-logos/logo-calor-dado-min.png" alt="Calor Dado"></a>
+
+            <!-- Menu de navegação -->
             <nav>
                 <h2 class="icone"><a href="" title="Abra menu de navegação">Menu &equiv;</a></h2>
                 <ul class="menu"></a>
-                    <li><a href="index.html" title="página inicial">Home</a></li>
-                    <li><a href="quemsomos.html" title="página quem somos">QUEM SOMOS</a></li>
+                    <li><a href="index.php" title="página inicial">Home</a></li>
+                    <li><a href="quemsomos.php" title="página quem somos">QUEM SOMOS</a></li>
                     <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
-                    <li><a href="contato.html" title="página contato">CONTATO</a></li>
+                    <li><a href="contato.php" title="página contato">CONTATO</a></li>
                 </ul>
             </nav>
+
         </div>
-        <!-- Fim Menu -->
     </header>
-
-    <!-- TITULO E DESCRIÇÃO -->
-    <div class="container-fluid mb-4">
-      <div class="row align-items-center destaque text-light">
-        <h1 class="text-center pb-4 py-3 text-light">Como posso ajudar?</h1>
-        <p class="text-center">Você tem uma pergunta ou está interessado em trabalhar conosco e com nossa equipe? Basta preencher os campos do formulario abaixo:</p>
+   
+    <section class="container-fluid row text-center my-2 py-3 mb-5 mt-4 m-auto">
+      <div class="col-lg-6 p-xxl-5">
+        <h1 class="mb-4 py-2">Quem somos?</h1>
+        <p class="mb-5">A calor dado é uma OSC (organização de serviço civil) que ajuda moradores de rua e pessoas carentes a poderem receber roupas em bom estado. Temos mais de 5 anos de experiência ajudando pessoas pela capital do estado de São Paulo inteira, e pretendemos ajudar o Brasil inteiro no futuro, distribuindo calor e amor aos mais necessitados.</p>
       </div>
+
+      <div class="col-lg-6 m-auto">
+        <img class="coluna1-img imgUM" src="img/img-somos/1-identidade-min.jpg" title="Pessoa de terno segurando cartaz com o sinal de interrogação no rosto ">
+      </div>
+    </section>
+
+    <section class="container-fluid row text-center my-2 py-3 mb-5 flex-row-reverse m-auto">
+      <div class="col-lg-6">
+        <h1 class="">Nossa Trajetória</h1>
+        <p class="mb-5 p-4 p-xxl-5">A calor dado é uma OSC fictícia, que nasceu de um projeto integrador do curso técnico de informática para internet, com a finalidade de ajudar pessoas de extrema necessidade, com a arrecadação e doação de roupas em bom estado e dinheiro para a compra de cobertores, calçados etc para doação.</p>
+      </div>
+      <div class="col-lg-6 m-auto">
+        <img src="img/img-somos/planodecarreira2-min.jpg" title="Ilustração de um grupo de pessoas se ajudando, para chegar no topo de um gráfico">
+      </div>
+    </section>  
+
+    <section class="container-fluid row my-2 py-3 mb-5 pt-4 ms-lg-5">
+      <div class="col-lg-5 mb-4 m-auto">
+        <h1 class="text-center mb-4">Curiosidades</h1>
+        <ul>
+          <li>Trabalhamos na região da cidade de São Paulo.</li> 
+          <li>Já ajudamos 621 famílias, em necessidade extrema na cidade de São Paulo.</li>
+          <li>Parceria com mais de 13 OSCs (Organizações da Sociedade Civil), como a Exército da Salvação.</li>
+          <li> No ano de 2022 já recebemos em média 490 doações. </li>
+          <li>Em 2021 ganhamos o prêmio de melhores ONGs.</li>
+        </ul>
+      </div>
+
+      <div class="text-center col-lg-7 m-auto">
+        <img src="img/img-somos/banner-4-min.png" title="Selo de 100 melhores ONGs do Brasil de 2021">
+      </div>
+    </section>
+<!-- Fim conteúdo -->
+
+<!-- Início CTA -->
+    <div class="container-fluid row text-center my-2 py-3 mb-5 mb-lg-3 pt-4 m-auto">
+      <article class="col-lg-4 mb-4">
+        <div class="">  
+          <img src="img/img-somos/missao-1-min.png" title="Ilustração de um homem de terno observando o topo de uma montanha, e com uma bandeira no topo dela">
+        </div>
+
+        <h2 class="mt-3 mb-4">Missão</h2>
+        <p class="">Nossa missão é ajudar o máximo de pessoas possíveis com o nosso trabalho, a fim de fazer São Paulo um lugar melhor, para as pessoas viverem através da nossa ajuda.</p>
+      </article>
+
+      <article class="col-lg-4 mb-4">
+        <div class="">
+          <img src="img/img-somos/visao-2-min.png" title="Ilustração de um homem de terno, que com uma mão está segurando uma mala, e na outra mão, obersando seu objetivo com uma luneta.">
+        </div>
+        <h2 class="mt-3 mb-4">Visão</h2>
+        <p class="">Ser referência em ajudar ao próximo pela qualidade do nosso trabalho prestado, e ser conhecido mundialmente como uma instituição que já ajudou milhares de pessoas necessitadas, incentivando outras pessoas a ajudar o próximo.</p>
+      </article>
+
+      <article class="col-lg-4 mb-4">
+          
+        <div>
+          <img src="img/img-somos/valores-3-min.png" title="Ilustração de dois homens de terno se comprimentando com um aperto de mão, e um deles está segurando uma mala.">
+        </div>  
+        <h2 class="mt-3 mb-4">Valores</h2>
+        <p>Confiança, Empatia, Respeito, Humanização, Solidariedade.</p>
+
+      </article>
     </div>
-    <!--  FORMULARIO PRA PODER INSERIR OS DADOS -->
-
-<div class="row m-auto">
-  <div class="col-lg-6 col-xxl-5 m-auto mt-5">
-    <form action="https://formspree.io/f/mnqwrraj" method="post" class="contatenos form-control">    
-                    
-      <h2 class="text-center">Contate-nos</h2>     
-      
-      <div class="pb-2">
-        <label for="inputPassword4" class="form-label"></label> 
-        <div class="input-group">
-          <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-person-fill"></i></div>
-          <input type="nome" class="form-control" id="inputPassword4" placeholder="Nome:" name="nome">
-        </div>  
-      </div>
-      
-      <div class="my-2">
-        <label for="inputPassword4" class="form-label"></label> 
-        <div class="input-group">
-          <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-fill"></i></div>
-          <input type="email" class="form-control" id="inputPassword4" placeholder="E-mail:" name="E-mail">
-        </div>  
-      </div>
-      
-      <div class="my-2">
-        <label for="inputPassword4" class="form-label"></label> 
-        <div class="input-group">
-          <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-telephone-fill"></i></div>
-          <input type="tel" class="form-control" id="inputPassword4" placeholder="Telefone:" name="telefone">
-        </div>  
-      </div>
-      <div class="my-2 mb-3">
-        <label for="inputPassword4" class="form-label"></label> 
-        <div class="input-group">
-          <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-paper-fill"></i></div>
-         <textarea  placeholder="Digite aqui sua menssagem:" name="mensagem" id="mensagem" rows="3" class="form-control"></textarea>
-        </div>  
-      </div>
-
-      
-      
-    
-      <div class="pb-2">
-        <p><a href="lgpd.html" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a></p>
-        <div class="text-end">
-          <button type="submit" class="btn btn-primary text-center" title="enviar formulário de contato">Enviar</button>
-        </div>   
-      </div>
-     </form>
-  </div>
-
-  <div class="col-lg-6 mt-5 mb-5">
-    <div class="text-center">
-      <h2>Localização</h2>
-        <p>Av.paulista, 1500 - Bela Vista, são paulo - SP</P>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1784274189363!2d-46.65746628255615!3d-23.562034400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c925263541%3A0x4b30df73fca5a36b!2sAv.%20Paulista%2C%201500%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1653573464097!5m2!1spt-BR!2sbr" width="80%" height="485" class="border" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
-</div>
+<!-- Fim do CTA -->
 
 <!-- Início Footer -->
-<footer class="text-center mt-4">
+<footer class="text-center">
   <section class="container-fluid row m-auto border-top">
     <div class="col-md-4 col-xl-4 col-xxl-4 mt-5 ms-md-3 ms-xl-0 ms-xxl-4 ps-xxl-5 pt-xxl-2">
       <img src="img/img-logos/coracao_logo_1.ico" alt="Logo-calor-dado">
@@ -174,7 +176,6 @@
 </section>
 <!-- FIM DO Footer -->
 
-<!-- Linkando para o JS -->
     <script src="js/menu.js"></script>
     <script src="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js"></script>
 </body>
