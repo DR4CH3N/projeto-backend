@@ -1,20 +1,42 @@
 <?php
+require_once "vendor/autoload.php";
+use CalorDado\ControleDeAcesso;
 use CalorDado\Usuario;
-use CalorDado\Utilitarios;
-require_once "./vendor/autoload.php";
-$usuario = new Usuario;
-if(isset($_POST['inscrever'])){
-  $usuario->setNome($_POST['nome']);
-  $usuario->setEmail($_POST['email']);
 
-  $usuario->setTipo('usuario');
-  
-  if($_POST['senha'] === $_POST['senha-confirma']) {
-    $usuario->setSenha( $_POST['senha']);
-    $usuario->inserir();
-    header("location:login.php");
+if (isset($_POST['entrar'])) {
+	if (empty($_POST['email']) || empty($_POST['senha'])) {
+		header("location:login.php?campos_obrigatorios");
+	} else {
+    $usuario = new Usuario;
+    $usuario->setEmail($_POST['email']);
+    $dados = $usuario->buscar();
+    if(!$dados){
+      header("location:login.php?nao_encontrado");
+    } else {
+      if(password_verify($_POST['senha'], $dados['senha'])){
+        $sessao = new ControleDeAcesso;
+				$sessao->login($dados['id'], $dados['nome'], $dados['tipo']);
+        if($_SESSION['tipo'] === 'admin'){
+          header("location:admin/index.php");
+        } else {
+          header("location:querodoar.php");
+        }
+      } else {
+        header("location:login.php?senha_incorreta");
+      }
+    }
+  }
+} 
+if (isset($_GET['acesso_proibido'])) {
+	$feedback = "Você deve logar primeiro!";
+} elseif (isset($_GET['campos_obrigatorios'])) {
+	$feedback = "Você deve preencher todos os campos!";
+} elseif (isset($_GET['nao_encontrado'])) {
+	$feedback = "Usúario não encontrado!";
+} elseif (isset($_GET['senha_incorreta'])) {
+	$feedback = "Senha incorreta!";
 }
-}
+
 
 ?>
 
@@ -57,8 +79,8 @@ if(isset($_POST['inscrever'])){
           <ul class="menu"></a>
             <li><a href="index.html" title="página inicial">Home</a></li>
             <li><a href="quemsomos.html" title="página quem somos">QUEM SOMOS</a></li>
-          <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
-          <li><a href="contato.html" title="página contato">CONTATO</a></li>
+            <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
+            <li><a href="contato.html" title="página contato">CONTATO</a></li>
           </ul>
       </nav>
     </div>
@@ -67,53 +89,45 @@ if(isset($_POST['inscrever'])){
   <!-- área de login -->
   
 
-
+  
   <section class="row d-flex justify-content-center p-5 login ">
+    <?php if(isset($feedback)){?>
+			<p class="my-2 alert alert-warning text-center">
+			  <?=$feedback?>
+			</p>
+    <?php } ?>
     <div class=" row delimagens text-center col-lg-6 col-xxl-4 bg-white rounded-start">
-      <h1 class="mb-4 mt-5">Bem-Vindo de volta!</h1>
-      <p class="p-4">Para se manter conectado conosco faça login com suas informações pessoais.</p>
-      <img src="img/icones/img-login-desk.png" alt="">  
+      <h1 class="mb-4 mt-4">Bem-Vindo de volta!</h1>
+      <p>Para se manter conectado conosco faça login com suas informações pessoais.</p>
+      
+      <img  src="img/icones/img-login-desk.png" alt=""> 
     </div>
     <div class="row bg-black col-12 col-md-8 col-lg-6 col-xxl-4 rounded-end">
       <div class="m-auto col-11  py-5">
         <div class="text-center">
           <img src="img/img-logos/Favicon_png-min.png" alt="">
         </div>
-        <h2 class="text-center text-white  mb-4">Inscrever-se</h2>
+        <h2 class="text-center text-white  mb-4">Recuperar senha</h2>
 
-        <form action="" method="post">
-           <div class="form-outline mb-2">
-            <input type="text" id="nome" name="nome" class="form-control form-control-lg"
-              placeholder="Nome " />
-            <label class="form-label" for="nome"></label>
-          </div>
+        <form  action="" method="post" id="form-login" name="form-login">
           <!-- Email input -->
           <div class="form-outline mb-2">
-            <input type="email" id="email" name="email" class="form-control form-control-lg"
+            <input type="email" name="email" id="email" class="form-control form-control-lg"
               placeholder="Email " />
-            <label class="form-label" for="email"></label>
+            <label class="form-label" for="form3Example3"></label>
           </div>
 
-          <!-- Password input -->
-          <div class="form-outline mb-2">
-            <input type="password" id="senha" name="senha" class="form-control form-control-lg"
-              placeholder="Senha" required>
-            <label class="form-label" for="senha"></label>
-          </div>
+         
 
-          <div class="form-outline mb-2">
-            <input type="password" id="senha-confirma" name="senha-confirma" class="form-control form-control-lg"
-              placeholder="Confirmar senha" required>
-            <label class="form-label" for="senha-confirma"></label>
-          </div>
-          <div class="text-center text-lg-start mt-4 ">
-            <button type="submit" name="inscrever" id="inscrever" class="btn btn-primary col-12 btn-lg"
-              >Inscrever-se</button> 
-          </div>
+          
+
+          <button class="btn btn-primary btn-lg mt-3 col-12" name="enviar" id="enviar" type="submit">Enviar</button>
+
           <div class="d-flex justify-content-between align-items-center">
-              <p class="small mt-2 pt-1 mb-0 text-white">Já tem uma conta? </p>
-              <a href="login.php"
-                class="politica ">Entrar</a>
+              <p class="small mt-2 pt-1 mb-0 text-white">Não tem uma conta ainda? </p>
+              <a href="cadastro.php"
+                class="politica col-6 text-end">Inscrever-se</a>
+               
           </div> 
         </form>
       </div>  

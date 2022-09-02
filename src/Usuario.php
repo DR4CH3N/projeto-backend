@@ -27,12 +27,13 @@ final class Usuario {
     }
     
     public function inserir():void{
-        $sql = "INSERT INTO usuarios(nome, email, senha) VALUES (:nome, :email, :senha)";
+        $sql = "INSERT INTO usuarios(nome, email, senha, tipo) VALUES (:nome, :email, :senha, :tipo)";
         try{
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindParam(":nome", $this->nome, PDO::PARAM_STR);
             $consulta->bindParam(":email", $this->email, PDO::PARAM_STR);
             $consulta->bindParam(":senha", $this->senha, PDO::PARAM_STR);
+            $consulta->bindParam(":tipo", $this->tipo, PDO::PARAM_STR);
             $consulta->execute();
         } catch(Exception $erro){
             die("Erro: ".$erro->getMessage());
