@@ -17,21 +17,23 @@ if (isset($_POST['enviar'])) {
     // Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
     $mail->CharSet = "UTF-8";
+    $mail->SMTPDebug = 0; // 2 exibe log/mensagens de erro ou sucesso
 
     try {
         // Confifurações do servidor de e-mail
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = 'smtp.titan.email';
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = 'lucasmendes@sunioweb.com.br ';
+        $mail->Port = 465;
+        $mail->SMTPSecure = 'ssl'; 
+        $mail->Username = 'lucasmendes@sunioweb.com.br';
         $mail->Password = 'Teste@123';
 
         // Quem envia
-        $mail->setFrom('contato@sitecrud.com', 'Site Crud');
+        $mail->setFrom('lucasmendes@sunioweb.com.br', 'Admin');
 
         // Quem recebe
-        $mail->addAddress('lucasaraujo12345@outlook.com.br', 'Lucas');
+        $mail->addAddress('lucasmendes@sunioweb.com.br', 'Admin');
         
         // Para quem responder
         $mail->addReplyTo($email, 'Retorno do contato');
@@ -40,7 +42,7 @@ if (isset($_POST['enviar'])) {
         $mail->isHTML(true);
 
         // Set email format to HTML
-        $mail->Subject = "Contato Site - ".$assunto;
+        $mail->Subject = "Contato Site Calor Dado";
 
         // Corpo da mensagem em formato HTML
         $mail->Body    = "<b>Nome:</b>.$nome <br> <b>E-mail:</b> $email <br> <b>Telefone:</b> $telefone</b> <br> <b>Mensagem:</b> $mensagem";
@@ -50,6 +52,7 @@ if (isset($_POST['enviar'])) {
 
         $mail->send();
         echo 'Mensagem enviada com sucesso!';
+        // echo "<script>alert('enviado')</script>"; Testando
     } catch (Exception $e) {
         echo "Ops! Deu ruim: {$mail->ErrorInfo}";
     }
@@ -129,7 +132,7 @@ if (isset($_POST['enviar'])) {
         <label for="inputPassword4" class="form-label"></label> 
         <div class="input-group">
           <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-fill"></i></div>
-          <input type="email" class="form-control" id="inputPassword4" placeholder="E-mail:" name="E-mail">
+          <input type="email" class="form-control" id="inputPassword4" placeholder="E-mail:" name="email">
         </div>  
       </div>
       
@@ -152,9 +155,9 @@ if (isset($_POST['enviar'])) {
       
     
       <div class="pb-2">
-        <p><a href="lgpd.html" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a></p>
+        <p><a href="lgpd.php" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a></p>
         <div class="text-end">
-          <button type="submit" class="btn btn-primary text-center" title="enviar formulário de contato">Enviar</button>
+          <button name="enviar" type="submit" class="btn btn-primary text-center" title="enviar formulário de contato">Enviar</button>
         </div>   
       </div>
      </form>
