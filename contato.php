@@ -88,7 +88,7 @@ if (isset($_POST['enviar'])) {
     <!-- Menu --> 
     <header>
         <div class="limitador">
-            <a href="index.html" title="Página Inicial"><img src="img/img-logos/logo-calor-dado-min.png" alt=""></a>
+            <a href="index.php" title="Página Inicial"><img src="img/img-logos/logo-calor-dado-min.png" alt=""></a>
             <nav>
                 <h2 class="icone"><a href="" title="Abra menu de navegação">Menu &equiv;</a></h2>
                 <ul class="menu"></a>
@@ -192,10 +192,10 @@ if (isset($_POST['enviar'])) {
     <div class="col-md-3  col-xl-4 col-xxl-3 mt-5 pt-md-4  mb-5">
       <h5>Mapa do site</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="quemsomos.html" class="nav-link p-0 text-muted">Quem somos</a></li>
-          <li class="nav-item mb-2"><a href="querodoar.html" class="nav-link p-0 text-muted">Quero doar</a></li>
-          <li class="nav-item mb-2"><a href="contato.html" class="nav-link p-0 text-muted">Contato</a></li>
+          <li class="nav-item mb-2"><a href="index.php" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="quemsomos.php" class="nav-link p-0 text-muted">Quem somos</a></li>
+          <li class="nav-item mb-2"><a href="querodoar.php" class="nav-link p-0 text-muted">Quero doar</a></li>
+          <li class="nav-item mb-2"><a href="contato.php" class="nav-link p-0 text-muted">Contato</a></li>
         </ul>
     </div>
   </section>
