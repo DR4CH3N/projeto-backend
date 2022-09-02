@@ -82,10 +82,12 @@
         </div>  
       </div>
       <div class="my-2 mb-3">
-        <label for="inputPassword4" class="form-label"></label> 
+        <label for="inputPassword4" class="form-label">
+          <span id="maximo">(restam <b id="caracteres">100</b> caracteres)</span>
+        </label> 
         <div class="input-group">
           <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-paper-fill"></i></div>
-         <textarea  placeholder="Digite aqui sua menssagem:" name="mensagem" id="mensagem" rows="3" class="form-control"></textarea>
+         <textarea  placeholder="Digite aqui sua menssagem:" name="mensagem" id="mensagem" rows="3" class="form-control" maxlength="100"></textarea>
         </div>  
       </div>
 
@@ -177,5 +179,35 @@
 <!-- Linkando para o JS -->
     <script src="js/menu.js"></script>
     <script src="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js"></script>
+    
+    <script src="plugins/vanilla-masker.min.js"></script>
+
+    <script>
+      const spanMaximo = document.querySelector("#maximo");
+      const bCaracteres = $("#caracteres");
+      const textMensagem = $("#mensagem");
+  
+      let quantidade = 100;
+      // ouvinte de evento
+      textMensagem.on ("input", function() {
+      let conteudo = textMensagem.val();
+  
+      // criando contagem regressiva
+      let contagem = quantidade - conteudo.length;
+  
+      // exibindo o numero no html
+      bCaracteres.text(contagem);
+  
+      if (contagem == 0) {
+      spanMaximo.css('color', 'red');
+      spanMaximo.text("Limite de caracteres alcançado");
+      } else {
+          spanMaximo.css('color', 'black');
+          spanMaximo.html("(restam <b id='caracteres'>" +contagem+ "</b> caracteres)");
+      }
+      
+      })
+  </script>
+
 </body>
 </html>
