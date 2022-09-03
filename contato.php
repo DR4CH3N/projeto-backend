@@ -44,12 +44,9 @@
          <textarea  placeholder="Digite aqui sua menssagem:" name="mensagem" id="mensagem" rows="3" class="form-control"></textarea>
         </div>  
       </div>
-
-      
-      
     
       <div class="pb-2">
-        <p><a href="lgpd.html" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a></p>
+        <p><a href="lgpd.php" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a></p>
         <div class="text-end">
           <button type="submit" class="btn btn-primary text-center" title="enviar formulário de contato">Enviar</button>
         </div>   
@@ -65,5 +62,4 @@
     </div>
   </div>
 </div>
-
 <?php require_once "./inc/rodape.php"; ?>
