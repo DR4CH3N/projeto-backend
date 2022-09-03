@@ -16,6 +16,7 @@ if(isset($_POST['inscrever'])){
 }
 
 ?>
+
   <!-- área de login -->
   <section class="row d-flex justify-content-center p-5 login ">
     <div class=" row delimagens text-center col-lg-6 col-xxl-4 bg-white rounded-start">

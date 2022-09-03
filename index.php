@@ -1,6 +1,5 @@
-<?php
-require_once "./inc/cabecalho.php";
-?>
+<?php require_once "./inc/cabecalho.php"; ?>
+
   <!-- Conteudo principal -->
   <main class="container-fluid my-5 py-1 text-center p-5">
     <section class="row m-auto mb-5 pb-xl-5 ">
@@ -27,4 +26,4 @@ require_once "./inc/cabecalho.php";
   </main>
   <!-- Fim do conteudo-->
 
-  <?php require_once "./inc/rodape.php"; ?>
+<?php require_once "./inc/rodape.php"; ?>

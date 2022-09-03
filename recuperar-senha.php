@@ -40,8 +40,6 @@ if (isset($_GET['acesso_proibido'])) {
 
 
 ?>
-  <!-- área de login -->
-  
 
   
   <section class="row d-flex justify-content-center p-5 login ">
