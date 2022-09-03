@@ -1,7 +1,7 @@
 <?php
 ob_start();
 use CalorDado\ControleDeAcesso;
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 /* Criamos objeto para acessar os recursos de sessão PHP na classe ControleDeAcesso */
 $sessao = new ControleDeAcesso;
 /* Executamos VerificaAcesso para checar se tem alguém logado */
@@ -65,7 +65,5 @@ $pagina = basename($_SERVER['PHP_SELF']);
 
 </header>
 
-<main class="flex-shrink-0">
-    <div class="container">
 
     

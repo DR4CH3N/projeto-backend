@@ -23,7 +23,7 @@ final class Cadastro {
     public function listarUsuario():array{
         /* fazer inner/right join depois com a tabela cadastro (para poder listar nomes e endereços dos usuarios) e poder ordenar por nome */
         $sql = "SELECT usuarios.id, usuarios.nome, usuarios.email, cadastro.telefone, cadastro.endereco, cadastro.cep, cadastro.cidade, cadastro.numero, cadastro.complemento, cadastro.bairro FROM usuarios LEFT JOIN cadastro
-        ON usuarios.id = cadastro.usuario_id ";
+        ON cadastro.usuario_id = usuarios.id";
         try{
             $consulta = $this->conexao->prepare($sql);
 

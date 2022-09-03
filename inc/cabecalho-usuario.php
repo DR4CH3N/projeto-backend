@@ -1,6 +1,17 @@
-<?php 
+<?php
 ob_start();
-require_once "./vendor/autoload.php"; ?>
+use CalorDado\ControleDeAcesso;
+require_once "./vendor/autoload.php";
+/* Criamos objeto para acessar os recursos de sessão PHP na classe ControleDeAcesso */
+$sessao = new ControleDeAcesso;
+/* Executamos VerificaAcesso para checar se tem alguém logado */
+/* $sessao->verfificaAcesso(); */
+/* Se o parâmetro ?sair existir, então faça o logout */
+if(isset($_GET['sair'])){
+    $sessao->logout();
+}
+$pagina = basename($_SERVER['PHP_SELF']);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -39,15 +50,17 @@ require_once "./vendor/autoload.php"; ?>
             <li><a href="../quemsomos.php" title="página quem somos">QUEM SOMOS</a></li>
             <li><a href="../querodoar.php" title="página quero doar">QUERO DOAR</a></li>
             <li><a href="../contato.php" title="página contato">CONTATO</a></li>
-            <li><a href="../login.php">Login</a>
+            <li class="nav-item">
+                <a class="nav-link fw-bold" href="?sair"> <i class="bi bi-x-circle"></i> Sair</a>
+            </li>
             </li>
           </ul>
       </nav>
     </div>
   </header>
-
-  <main class="flex-shrink-0">
+  
+<main class="flex-shrink-0">
     <div class="container">
 
-
+  
   

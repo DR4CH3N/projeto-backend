@@ -1,3 +1,6 @@
+  </div>
+</main>
+
 <!-- Início Footer -->
 <footer class="text-center">
     <section class="container-fluid row m-auto border-top">
@@ -19,10 +22,10 @@
       <div class="col-md-3  col-xl-4 col-xxl-3 mt-5 pt-md-4  mb-5">
         <h5>Mapa do site</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="quemsomos.html" class="nav-link p-0 text-muted">Quem somos</a></li>
-          <li class="nav-item mb-2"><a href="querodoar.html" class="nav-link p-0 text-muted">Quero doar</a></li>
-          <li class="nav-item mb-2"><a href="contato.html" class="nav-link p-0 text-muted">Contato</a></li>
+          <li class="nav-item mb-2"><a href="index.php" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="quemsomos.php" class="nav-link p-0 text-muted">Quem somos</a></li>
+          <li class="nav-item mb-2"><a href="querodoar.php" class="nav-link p-0 text-muted">Quero doar</a></li>
+          <li class="nav-item mb-2"><a href="contato.php" class="nav-link p-0 text-muted">Contato</a></li>
         </ul>
       </div>
         <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -69,7 +72,8 @@
   </section>
  <!-- FIM DO Footer -->
 
-  <script src="js/menu.js"></script>
-  <script src="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js"></script>
 </body>
 </html>
+<?php ob_end_flush(); ?>

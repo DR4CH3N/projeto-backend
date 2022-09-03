@@ -69,11 +69,11 @@ nav, nav p {
 /*  configurações do texto do menu */
 .menu a {
     color: rgb(77, 72, 72);
-    font-weight: normal;
+    font-weight: bold;
     font-family: 'Roboto', sans-serif;
     background-color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 50px; /* DISTANCIA ENTRE OS ITENS */
     align-items: center; /* POSICAO DO TEXTO DENTRO DO A */
 }
@@ -90,7 +90,7 @@ nav, nav p {
 /* configuraçao do menu mobile do js */
 .menu-aberto {
     display: block;
-    position: sticky;
+    position: absolute;
     right: 0;
     left: 0;
 }
@@ -104,8 +104,7 @@ header .limitador {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    position: sticky;
-    top: 0;
+    flex-direction: row;
 }
 
 .limitador {

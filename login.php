@@ -1,8 +1,8 @@
 <?php
+require_once "./inc/cabecalho.php";
 require_once "vendor/autoload.php";
 use CalorDado\ControleDeAcesso;
 use CalorDado\Usuario;
-
 if (isset($_POST['entrar'])) {
 	if (empty($_POST['email']) || empty($_POST['senha'])) {
 		header("location:login.php?campos_obrigatorios");
