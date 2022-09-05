@@ -1,8 +1,13 @@
 <?php
 use CalorDado\Cadastro;
+use CalorDado\Utilitarios;
+
 require_once "./vendor/autoload.php";
 require_once "./inc/cabecalho.php";
 $cadastro = new Cadastro;
+
+$dados = $cadastro->listarUm();
+Utilitarios::dump($dados);
 /* 
 if(isset($_POST['enviar'])){
   $cadastro->setTelefone($_POST['telefone']);

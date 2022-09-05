@@ -2,7 +2,7 @@
 <!-- Início Footer -->
 <footer class="text-center">
     <section class="container-fluid row m-auto border-top">
-      <div class="col-md-4 col-xl-4 col-xxl-4 mt-5 ms-md-3 ms-xl-0 ms-xxl-4 ps-xxl-5 pt-xxl-2">
+      <div class="col-md-4 col-xl-4 col-xxl-4 mt-5 pt-2 ms-md-3 ms-xl-0 ms-xxl-4 ps-xxl-5 pt-xxl-2">
         <img src="img/img-logos/logo-calor-dado-min.png" alt="Logo-calor-dado">
         <div class="m-1 p-2 p-md-0 m-md-0 p-lg-1 m-lg-0 p-xl-3 p-xxl-2 m-xxl-2">  
           <span>Somos a Quero Doar, uma organização voltada para facilitar a coleta e distribuição de doações.</span>
@@ -74,3 +74,4 @@
   
 </body>
 </html>
+<?php ob_end_flush(); ?>
