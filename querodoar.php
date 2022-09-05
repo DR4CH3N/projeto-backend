@@ -174,7 +174,7 @@ if(isset($_POST['enviar'])){
             <label for="inputPassword4" class="form-label"></label> 
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
-              <input type="text" class="form-control" id="inputPassword4" placeholder="Endereço:" name="endereco">
+              <input type="text" class="form-control" id="endereco" placeholder="Endereço:" name="endereco">
             </div>  
           </div>
           
@@ -182,7 +182,7 @@ if(isset($_POST['enviar'])){
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="number" class="form-control" id="inputAddress" placeholder="Número:" name="numero">
+              <input type="number" class="form-control" id="numero" placeholder="Número:" name="numero">
             </div>
           </div>
 
@@ -191,7 +191,7 @@ if(isset($_POST['enviar'])){
             <label for="inputEmail4" class="form-label"></label>
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="number" class="form-control" id="inputEmail4" maxlength="9" placeholder="CEP: " name="cep">
+              <input type="text" class="form-control" id="cep" maxlength="10" placeholder="CEP: " name="cep" required>
               <b id="status"></b>
             </div>
           </div>
@@ -200,7 +200,7 @@ if(isset($_POST['enviar'])){
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Complemento:" name="complemento">
+              <input type="text" class="form-control" id="complemento" placeholder="Complemento:" name="complemento">
             </div>
           </div>
 
@@ -208,7 +208,7 @@ if(isset($_POST['enviar'])){
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-house-fill"></i></div>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Bairro:" name="bairro">
+              <input type="text" class="form-control" id="bairro" placeholder="Bairro:" name="bairro">
             </div>
           </div>
 
@@ -216,7 +216,7 @@ if(isset($_POST['enviar'])){
             <label for="inputCity" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-house-door-fill"></i></div>
-              <input type="text" class="form-control" id="inputCity" placeholder="Cidade: " name="cidade">
+              <input type="text" class="form-control" id="cidade" placeholder="Cidade: " name="cidade">
             </div>
           </div>
       
@@ -294,11 +294,26 @@ if(isset($_POST['enviar'])){
 </section>
 <!-- FIM DO Footer -->
 
+  <script src="plugins/jquery-3.6.0.min.js"></script>
         
     <!-- Linkando para o JS -->
     <script src="js/menu.js"></script>
     <script src="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js"></script>
 
+    <script src="plugins/vanilla-masker.min.js"></script>
+
+<script>
+    VMasker(document.querySelector("#cep")).maskPattern(" 99999-999");
+
+  function inputHandler(masks, max, event) {
+    var c = event.target;
+    var v = c.value.replace(/\D/g, '');
+    var m = c.value.length > max ? 1 : 0;
+        VMasker(c).unMask();
+        VMasker(c).maskPattern(masks[m]);
+        c.value = VMasker.toPattern(v, masks[m]);
+}
+</script>
 
     <script>
         $(document).ready(function() {
