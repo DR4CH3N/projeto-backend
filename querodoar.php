@@ -125,6 +125,14 @@ if(isset($_POST['enviar'])){
           <h2 class="text-center mt-5">Endereço</h2>  
           
           <div class="col-md-12">
+            <label for="inputEmail4" class="form-label"></label>
+            <div class="input-group">
+              <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
+              <input type="number" class="form-control" id="cep" maxlength="9" placeholder="CEP: " name="cep">
+            </div>
+          </div>
+
+          <div class="col-md-6">
             <label for="inputPassword4" class="form-label"></label> 
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
@@ -137,15 +145,6 @@ if(isset($_POST['enviar'])){
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
               <input type="number" class="form-control" id="numero" placeholder="Número:" name="numero">
-            </div>
-          </div>
-
-
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label"></label>
-            <div class="input-group">
-              <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="number" class="form-control" id="cep" maxlength="9" placeholder="CEP: " name="cep">
             </div>
           </div>
 
