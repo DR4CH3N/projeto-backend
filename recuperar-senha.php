@@ -60,6 +60,7 @@ if (isset($_GET['acesso_proibido'])) {
           <img src="img/img-logos/Favicon_png-min.png" alt="">
         </div>
         <h2 class="text-center text-white  mb-4">Recuperar senha</h2>
+        <p class="text-white text-center">Coloque o E-mail relacionado a conta abaixo que mandaremos um email com link para mudar sua senha.</p>
 
         <form  action="" method="post" id="form-login" name="form-login">
           <!-- Email input -->
