@@ -1,45 +1,55 @@
 <?php
-require_once "vendor/autoload.php";
-require_once "./inc/cabecalho.php";
-use CalorDado\ControleDeAcesso;
-use CalorDado\Usuario;
+require_once "./vendor/autoload.php";
+?> 
 
-if (isset($_POST['entrar'])) {
-	if (empty($_POST['email']) || empty($_POST['senha'])) {
-		header("location:login.php?campos_obrigatorios");
-	} else {
-    $usuario = new Usuario;
-    $usuario->setEmail($_POST['email']);
-    $dados = $usuario->buscar();
-    if(!$dados){
-      header("location:login.php?nao_encontrado");
-    } else {
-      if(password_verify($_POST['senha'], $dados['senha'])){
-        $sessao = new ControleDeAcesso;
-				$sessao->login($dados['id'], $dados['nome'], $dados['tipo']);
-        if($_SESSION['tipo'] === 'admin'){
-          header("location:admin/index.php");
-        } else {
-          header("location:querodoar.php");
-        }
-      } else {
-        header("location:login.php?senha_incorreta");
-      }
-    }
-  }
-} 
-if (isset($_GET['acesso_proibido'])) {
-	$feedback = "Você deve logar primeiro!";
-} elseif (isset($_GET['campos_obrigatorios'])) {
-	$feedback = "Você deve preencher todos os campos!";
-} elseif (isset($_GET['nao_encontrado'])) {
-	$feedback = "Usúario não encontrado!";
-} elseif (isset($_GET['senha_incorreta'])) {
-	$feedback = "Senha incorreta!";
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calor Dado</title>
+   
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/img-logos/Favicon_png-min.png">
 
+  <!-- Descrição resumida da página -->
+  <meta name="description" content="Somos uma instituição que busca ajudar as pessoas de extrema necessidade que moram nas ruas e passam por situações difícil, ainda mais em tempo de inverno.">
+    
+  <!-- Palavras-chave da página -->
+  <meta name="keywords" content="Doação, doação de agasalhos, doação de calçados">
+  
+  <!-- Inserindo o Bootstrap-->
+  <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
+  
+  <!-- Icons bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
-?>
+  <!-- Linkando para CSS externo-->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+
+  <!-- Início do cabeçalho --> 
+  <header >
+    <div class="limitador">
+      <a href="index.html" title="Página Inicial"><img src="img/img-logos/logo-calor-dado-min.png" alt="Calor Dado"></a>
+
+    <!-- Menu de navegação -->
+      <nav>
+        <h2 class="icone"><a href="" title="Abra menu de navegação">Menu &equiv;</a></h2>
+          <ul class="menu"></a>
+            <li><a href="index.html" title="página inicial">Home</a></li>
+            <li><a href="quemsomos.html" title="página quem somos">QUEM SOMOS</a></li>
+            <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
+            <li><a href="contato.html" title="página contato">CONTATO</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- Fim do cabeçalho -->
+  <!-- área de login -->
+  
 
   
   <section class="row d-flex justify-content-center p-5 login ">
@@ -60,9 +70,8 @@ if (isset($_GET['acesso_proibido'])) {
           <img src="img/img-logos/Favicon_png-min.png" alt="">
         </div>
         <h2 class="text-center text-white  mb-4">Recuperar senha</h2>
-        <p class="text-white text-center">Coloque o E-mail relacionado a conta abaixo que mandaremos um email com link para mudar sua senha.</p>
 
-        <form  action="" method="post" id="form-login" name="form-login">
+        <form  action="inc/reset-senha.php" method="post" id="form-login" name="email">
           <!-- Email input -->
           <div class="form-outline mb-2">
             <input type="email" name="email" id="email" class="form-control form-control-lg"
@@ -74,7 +83,7 @@ if (isset($_GET['acesso_proibido'])) {
 
           
 
-          <button class="btn btn-primary btn-lg mt-3 col-12" name="enviar" id="enviar" type="submit">Enviar</button>
+          <button class="btn btn-primary btn-lg mt-3 col-12" name="reset-senha" id="enviar" type="submit">Enviar</button>
 
           <div class="d-flex justify-content-between align-items-center">
               <p class="small mt-2 pt-1 mb-0 text-white">Não tem uma conta ainda? </p>
@@ -83,6 +92,14 @@ if (isset($_GET['acesso_proibido'])) {
                
           </div> 
         </form>
+        <?php
+        if (isset($_GET["reset"])) {
+          if ($_GET["reset"] == "sucesso") {
+            echo '<p> class="entradasucesso">Cheque seu E-mail!</p>';
+          }
+        }
+
+        ?>
       </div>  
     </div>    
   </section> 
