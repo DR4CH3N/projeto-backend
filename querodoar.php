@@ -125,7 +125,7 @@ if(isset($_POST['enviar'])){
 
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-person-fill"></i></div>
-              <input type="text" class="form-control" id="inputEmail4" placeholder="Nome:" name="Nome">
+              <input type="text" class="form-control" id="nome" placeholder="Nome:" name="Nome">
             </div>
           </div>
 
@@ -133,7 +133,7 @@ if(isset($_POST['enviar'])){
             <label for="inputPassword4" class="form-label"></label>
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-telephone-fill"></i></div>
-              <input type="tel" class="form-control" id="inputPassword4" placeholder="Tefefone:" name="Telefone">
+              <input type="tel" class="form-control" id="telefone" placeholder="Tefefone:" name="Telefone">
             </div>  
           </div>
 
@@ -141,7 +141,7 @@ if(isset($_POST['enviar'])){
             <label for="inputPassword4" class="form-label"></label> 
             <div class="input-group">
               <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-fill"></i></div>
-              <input type="email" class="form-control" id="inputPassword4" placeholder="E-mail:" name="E-mail">
+              <input type="email" class="form-control" id="email" placeholder="E-mail:" name="E-mail">
             </div>  
           </div>
           
@@ -169,8 +169,16 @@ if(isset($_POST['enviar'])){
 
             </div>  
           <h2 class="text-center mt-5">Endereço</h2>  
-          
           <div class="col-md-12">
+            <label for="inputEmail4" class="form-label"></label>
+            <div class="input-group">
+              <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
+              <input type="text" class="form-control" id="cep" maxlength="10" placeholder="CEP: " name="cep" required>
+              <b id="status"></b>
+            </div>
+          </div>
+
+          <div class="col-md-6">
             <label for="inputPassword4" class="form-label"></label> 
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
@@ -183,16 +191,6 @@ if(isset($_POST['enviar'])){
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
               <input type="number" class="form-control" id="numero" placeholder="Número:" name="numero">
-            </div>
-          </div>
-
-
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label"></label>
-            <div class="input-group">
-              <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="text" class="form-control" id="cep" maxlength="10" placeholder="CEP: " name="cep" required>
-              <b id="status"></b>
             </div>
           </div>
 
@@ -304,6 +302,7 @@ if(isset($_POST['enviar'])){
 
 <script>
     VMasker(document.querySelector("#cep")).maskPattern(" 99999-999");
+    VMasker(document.querySelector("#telefone")).maskPattern("(99) 9999-9999");
 
   function inputHandler(masks, max, event) {
     var c = event.target;
