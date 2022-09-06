@@ -125,7 +125,7 @@ if (isset($_POST['enviar'])) {
         <label for="inputPassword4" class="form-label"></label> 
         <div class="input-group">
           <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-person-fill"></i></div>
-          <input type="nome" class="form-control" id="inputPassword4" placeholder="Nome:" name="nome">
+          <input type="nome" class="form-control" id="nome" placeholder="Nome:" name="nome">
         </div>  
       </div>
       
@@ -133,7 +133,7 @@ if (isset($_POST['enviar'])) {
         <label for="inputPassword4" class="form-label"></label> 
         <div class="input-group">
           <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-fill"></i></div>
-          <input type="email" class="form-control" id="inputPassword4" placeholder="E-mail:" name="email">
+          <input type="email" class="form-control" id="email" placeholder="E-mail:" name="email">
         </div>  
       </div>
       
@@ -141,7 +141,7 @@ if (isset($_POST['enviar'])) {
         <label for="inputPassword4" class="form-label"></label> 
         <div class="input-group">
           <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-telephone-fill"></i></div>
-          <input type="tel" class="form-control" id="inputPassword4" placeholder="Telefone:" name="telefone">
+          <input type="tel" class="form-control" id="telefone" placeholder="Telefone:" name="telefone">
         </div>  
       </div>
 
