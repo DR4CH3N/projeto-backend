@@ -74,7 +74,7 @@ if (isset($_POST['enviar'])) {
       <div class="pb-2">
         <label for="inputPassword4" class="form-label"></label> 
         <div class="input-group">
-          <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-person-fill"></i></div>
+          <div class="input-group-text bg-transparent"><i class="bi bi-person-fill"></i></div>
           <input type="nome" class="form-control" id="nome" placeholder="Nome:" name="nome">
         </div>  
       </div>
@@ -82,25 +82,25 @@ if (isset($_POST['enviar'])) {
       <div class="my-2">
         <label for="inputPassword4" class="form-label"></label> 
         <div class="input-group">
-          <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-fill"></i></div>
+          <div class="input-group-text bg-transparent"><i class="bi bi-envelope-fill"></i></div>
           <input type="email" class="form-control" id="email" placeholder="E-mail:" name="email">
         </div>  
       </div>
       
       <div class="my-2">
-        <label for="inputPassword4" class="form-label"></label> 
-        <div class="input-group">
-          <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-telephone-fill"></i></div>
-          <input type="tel" class="form-control" id="telefone" placeholder="Telefone:" maxlength="12" name="telefone">
-        </div>  
-      </div>
+          <label for="inputPassword4" class="form-label"></label>
+          <div class="input-group">
+              <div class="input-group-text bg-transparent"><i class="bi bi-telephone-fill"></i></div>
+              <input type="tel" class="form-control" id="telefone" placeholder="Tefefone:" name="telefone">
+          </div>  
+       </div>
 
     	<div class="mb-3">
-				<label class="form-label" for="resumo">Resumo (máximo de 300 caracteres):</label>
+				<label class="form-label" for="mensagem">Resumo (máximo de 300 caracteres):</label>
 				<span id="maximo" class="badge bg-danger">0</span>
         <div class="input-group">
-          <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-paper-fill"></i></div>
-				  <textarea class="form-control" required name="resumo" id="resumo" cols="50" rows="2" maxlength="300"></textarea>
+          <div class="input-group-text bg-transparent"><i class="bi bi-envelope-paper-fill"></i></div>
+				  <textarea class="form-control" required name="mensagem" id="resumo" cols="50" rows="2" maxlength="300"></textarea>
         </div>  
 			</div>
 
@@ -125,11 +125,10 @@ if (isset($_POST['enviar'])) {
 </div>
 
 
-<?php require_once "./inc/rodape.php"; ?>
+
 <!-- Linkando para o JS -->
     <script src="js/contador.js"></script>
     <script src="js/jquery-3.6.0min.js"></script>
     <script src="js/vanilla-masker.min.js"></script>
     <script src="js/cep.js"></script>
-</body>
-</html>
+<?php require_once "./inc/rodape.php"; ?>
