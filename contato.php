@@ -1,4 +1,5 @@
-<?php require_once "./inc/cabecalho.php"; 
+<?php require_once "./inc/cabecalho.php";
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -91,7 +92,8 @@ if (isset($_POST['enviar'])) {
         </div>  
       </div>
       <div class="my-2 mb-3">
-        <label for="inputPassword4" class="form-label"></label> 
+        <label class="form-label" for="resumo">Resumo (máximo de 300 caracteres):</label>
+				<span id="maximo" class="badge bg-danger">0</span>
         <div class="input-group">
           <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-paper-fill"></i></div>
          <textarea  placeholder="Digite aqui sua menssagem:" name="mensagem" id="mensagem" rows="3" class="form-control"></textarea>
