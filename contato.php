@@ -1,5 +1,7 @@
 <?php require_once "./inc/cabecalho.php"; 
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 if (isset($_POST['enviar'])) {
   $nome = $_POST['nome'];
   $email = $_POST['email'];
