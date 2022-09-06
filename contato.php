@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
 require 'vendor/autoload.php';
-
+require_once "./inc/cabecalho.php";
 if (isset($_POST['enviar'])) {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -59,53 +59,6 @@ if (isset($_POST['enviar'])) {
 } // Final do IF
 ?>
 
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calor Dado - Contato</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/img-logos/Favicon_png-min.png">
-
-    <!-- Descrição resumida da página -->
-    <meta name="description" content="Entre em contato caso tenha uma dúvida ou uma ideia que possamos trabalhar juntos para ajudar o próximo.">
-    
-    <!-- Palavras-chave da página -->
-    <meta name="keywords" content="União, equipe, informações">
-
-    <!-- Inserindo o Bootstrap-->
-    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
-
-    <!-- Linkando para CSS externo-->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Icons bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-
-</head>
-<body>
-
-    <!-- Menu --> 
-    <header>
-        <div class="limitador">
-            <a href="index.php" title="Página Inicial"><img src="img/img-logos/logo-calor-dado-min.png" alt=""></a>
-            <nav>
-                <h2 class="icone"><a href="" title="Abra menu de navegação">Menu &equiv;</a></h2>
-                <ul class="menu"></a>
-                    <li><a href="index.php" title="página inicial">Home</a></li>
-                    <li><a href="quemsomos.php" title="página quem somos">QUEM SOMOS</a></li>
-                    <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
-                    <li><a href="contato.php" title="página contato">CONTATO</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!-- Fim Menu -->
-    </header>
-
     <!-- TITULO E DESCRIÇÃO -->
     <div class="container-fluid mb-4">
       <div class="row align-items-center destaque text-light">
@@ -148,10 +101,12 @@ if (isset($_POST['enviar'])) {
     	<div class="mb-3">
 				<label class="form-label" for="resumo">Resumo (máximo de 300 caracteres):</label>
 				<span id="maximo" class="badge bg-danger">0</span>
-				<textarea class="form-control" required name="resumo" id="resumo" cols="50" rows="2" maxlength="300"></textarea>
+        <div class="input-group">
+          <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-paper-fill"></i></div>
+				  <textarea class="form-control" required name="resumo" id="resumo" cols="50" rows="2" maxlength="300"></textarea>
+        </div>  
 			</div>
 
-      
       
     
       <div class="pb-2">
@@ -239,6 +194,5 @@ if (isset($_POST['enviar'])) {
 <!-- Linkando para o JS -->
     <script src="js/menu.js"></script>
     <script src="js/contador.js"></script>
-    <script src="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js"></script>
 </body>
 </html>
