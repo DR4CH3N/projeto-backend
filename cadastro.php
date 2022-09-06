@@ -104,6 +104,6 @@ if(isset($_POST['inscrever'])){
  <!-- FIM DO Footer -->
 
   <script src="js/menu.js"></script>
-  <script src="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js"></script>
+
 </body>
 </html>
