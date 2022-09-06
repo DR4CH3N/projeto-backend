@@ -6,7 +6,7 @@ require_once "./vendor/autoload.php";
 require_once "./inc/cabecalho.php";
 $cadastro = new Cadastro;
 
-$dados = $cadastro->listarUm();
+$dados = $cadastro->listarUsuario();
 Utilitarios::dump($dados);
 /* 
 if(isset($_POST['enviar'])){
@@ -126,14 +126,15 @@ if(isset($_POST['enviar'])){
 
             <!-- Endereço  -->
 
+           
             </div>  
           <h2 class="text-center mt-5">Endereço</h2>  
-          
-          <div class="col-md-12">
+          <div class="col-md-6">
             <label for="inputEmail4" class="form-label"></label>
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="number" class="form-control" id="cep" maxlength="9" placeholder="CEP: " name="cep">
+              <input type="text" class="form-control" id="cep" maxlength="10" placeholder="CEP: " name="cep" required>
+              
             </div>
           </div>
 
@@ -157,7 +158,7 @@ if(isset($_POST['enviar'])){
             <label for="inputAddress" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
-              <input type="text" class="form-control" id="complemento"  placeholder="Complemento:" name="complemento">
+              <input type="text" class="form-control" id="complemento" placeholder="Complemento:" name="complemento">
             </div>
           </div>
 
@@ -169,7 +170,7 @@ if(isset($_POST['enviar'])){
             </div>
           </div>
 
-          <div class="col-12 ">
+          <div class="col-6 ">
             <label for="inputCity" class="form-label"></label>
             <div class="input-group ">
               <div class="input-group-text bg-transparent"><i class="bi bi-house-door-fill"></i></div>
@@ -183,8 +184,10 @@ if(isset($_POST['enviar'])){
             <button name="enviar" type="submit" id="enviar" class="btn btn-primary">Enviar</button>
           </div>
 
+
       </form>
     </section>
-
+    <script src="js/jquery-3.6.0min.js"></script>
+    <script src="js/vanilla-masker.min.js"></script>
     <script src="js/cep.js"></script>
     <?php require_once "./inc/rodape.php"; ?>
