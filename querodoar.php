@@ -6,7 +6,7 @@ require_once "./vendor/autoload.php";
 require_once "./inc/cabecalho.php";
 $cadastro = new Cadastro;
 
-$dados = $cadastro->listarUsuario();
+$dados = $cadastro->listarUm();
 Utilitarios::dump($dados);
 /* 
 if(isset($_POST['enviar'])){
@@ -84,7 +84,7 @@ if(isset($_POST['enviar'])){
 
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-person-fill"></i></div>
-              <input type="text" class="form-control" id="nome" value="<?=$dados['nome']?>" placeholder="Nome:" name="nome">
+              <input type="text" class="form-control" id="nome" placeholder="Nome:" name="nome">
             </div>
           </div>
 
