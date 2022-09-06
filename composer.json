@@ -3,5 +3,8 @@
         "psr-4" : {
             "CalorDado\\" : "src/"
         }
-    }    
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.6"
+    }
 }
