@@ -1,4 +1,55 @@
-<?php require_once "./inc/cabecalho.php"; ?>
+<?php require_once "./inc/cabecalho.php"; 
+
+if (isset($_POST['enviar'])) {
+  $nome = $_POST['nome'];
+  $email = $_POST['email'];
+  $telefone = $_POST['telefone'];
+  $mensagem = $_POST['mensagem'];
+
+  // Create an instance; passing `true` enables exceptions
+  $mail = new PHPMailer(true);
+  $mail->CharSet = "UTF-8";
+  $mail->SMTPDebug = 0; // 2 exibe log/mensagens de erro ou sucesso
+
+  try {
+      // Confifurações do servidor de e-mail
+      $mail->isSMTP();
+      $mail->Host = 'smtp.titan.email';
+      $mail->SMTPAuth = true;
+      $mail->Port = 465;
+      $mail->SMTPSecure = 'ssl'; 
+      $mail->Username = 'lucasmendes@sunioweb.com.br';
+      $mail->Password = 'Teste@123';
+
+      // Quem envia
+      $mail->setFrom('lucasmendes@sunioweb.com.br', 'Admin');
+
+      // Quem recebe
+      $mail->addAddress('lucasmendes@sunioweb.com.br', 'Admin');
+      
+      // Para quem responder
+      $mail->addReplyTo($email, 'Retorno do contato');
+
+      // Content
+      $mail->isHTML(true);
+
+      // Set email format to HTML
+      $mail->Subject = "Contato Site Calor Dado";
+
+      // Corpo da mensagem em formato HTML
+      $mail->Body    = "<b>Nome:</b>.$nome <br> <b>E-mail:</b> $email <br> <b>Telefone:</b> $telefone</b> <br> <b>Mensagem:</b> $mensagem";
+
+      // Corpo da mensagem em formato texto puro
+      $mail->AltBody = "Nome: $nome \ E-mail: $email \n Telefone: $telefone: \n Mensagem: $mensagem";
+
+      $mail->send();
+      echo 'Mensagem enviada com sucesso!';
+      // echo "<script>alert('enviado')</script>"; Testando
+  } catch (Exception $e) {
+      echo "Ops! Deu ruim: {$mail->ErrorInfo}";
+  }
+} // Final do IF
+?>
     <!-- TITULO E DESCRIÇÃO -->
     <div class="container-fluid mb-4">
       <div class="row align-items-center destaque text-light">
