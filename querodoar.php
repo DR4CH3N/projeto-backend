@@ -186,5 +186,5 @@ if(isset($_POST['enviar'])){
       </form>
     </section>
 
-
+    <script src="js/cep.js"></script>
     <?php require_once "./inc/rodape.php"; ?>
