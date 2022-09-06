@@ -15,7 +15,7 @@ if (isset($_POST['enviar'])) {
     $mensagem = $_POST['mensagem'];
 
     // Create an instance; passing `true` enables exceptions
-    $mail = new PHPMailerP(true);
+    $mail = new PHPMailer(true);
     $mail->CharSet = "UTF-8";
     $mail->SMTPDebug = 0; // 2 exibe log/mensagens de erro ou sucesso
 
