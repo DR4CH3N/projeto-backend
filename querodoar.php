@@ -1,23 +1,29 @@
 <?php
 use CalorDado\Cadastro;
+use CalorDado\Usuario;
 use CalorDado\Utilitarios;
 
 require_once "./vendor/autoload.php";
 require_once "./inc/cabecalho.php";
-$cadastro = new Cadastro;
-
-$dados = $cadastro->listarUsuario();
-Utilitarios::dump($dados);
+if (isset($_GET['id'])) {
+	$usuario = new Usuario;
+  $cadastro = new Cadastro;
+  $usuario->setId($_GET['id']);
+  $dados = $usuario->listarUm();
+  if(isset($_POST['enviar'])){
+    $cadastro->setId($_GET['id']);
+    $cadastro->setTelefone($_POST['telefone']);
+    $cadastro->setEndereco($_POST['endereco']);
+    $cadastro->setNumero($_POST['numero']);
+    $cadastro->setCep($_POST['cep']);
+    $cadastro->setComplemento($_POST['complemento']);
+    $cadastro->setBairro($_POST['bairro']);
+    $cadastro->setCidade($_POST['cidade']);
+    $cadastro->inserir();
+  }  
+}
 /* 
-if(isset($_POST['enviar'])){
-  $cadastro->setTelefone($_POST['telefone']);
-  $cadastro->setEndereco($_POST['endereco']);
-  $cadastro->setNumero($_POST['numero']);
-  $cadastro->setCep($_POST['cep']);
-  $cadastro->setComplemento($_POST['complemento']);
-  $cadastro->setBairro($_POST['bairro']);
-  $cadastro->setCidade($_POST['cidade']);
-  $cadastro->InserirCadastro();
+
 } */
 ?>
 
@@ -27,7 +33,7 @@ if(isset($_POST['enviar'])){
           <h2 class="mt-1 mt-md-3 mt-lg-0">O QUE EU POSSO DOAR?</h2>
           <p class="text-center mt-5"> A nossa OSC arrecada tanto roupas, cobertores, calçados e também aceitamos doações em dinheiro para a compra das mesmas em condição nova.</p>
           <div class="col-12 mt-4 mb-4 text-center">
-            <a class="btn btn-outline-primary" href="#formulario" title="Ir para formulário de doação de roupas, cobertores ou tênis" role="button">Quero Doar</a>
+            <a class="btn btn-outline-primary" href="login.php" title="Ir para formulário de doação de roupas, cobertores ou tênis" role="button">Quero Doar</a>
           </div>  
         </div>
       </div>
@@ -42,7 +48,7 @@ if(isset($_POST['enviar'])){
           <p>Flexibilidade: você pode sugerir valores mais baixos para doação sem sair no prejuízo com as altas taxas de processamento.</p>
       </div>
     
-      <div class="text-center col-md-6 mb-xxl-5">
+      <div class="text-center col-md-6 mb-xxl-5 mb-5">
         <h2 class="mb-4 mb-md-4"> LER QR CODE</h2>
         <p class="text-center"><strong>Chave PIX:</strong> (11) 98312-5076</p>
 
@@ -52,7 +58,7 @@ if(isset($_POST['enviar'])){
     </article>
 
           
-  <section class="delcelulares container my-xxl-5">
+  <section class="delcelulares container my-xxl-5 mb-5">
     <div class="row m-auto ms-5">
       <div class="col-4 text-center row ms-1">
         <div class="mb-2"><img src="img/icones/celular-quero-doar-min.png" title="ícone de um celular"></div>
@@ -72,121 +78,7 @@ if(isset($_POST['enviar'])){
     </div>
   </section>
       
-  <!-- Espaço do conteudo e fomulário, seguir como esta no layout, as imagens ja estao na pasta-->
 
-    <section class="container mt-lg-4 pt-4" 
-    >
-      <form action="" method="post" id="formulario" class="row g-3">
-        <h2 class="text-center mt-5 mt-md-0">QUERO FAZER MINHA DOAÇÃO</h2> 
-
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label"></label>
-
-            <div class="input-group">
-              <div class="input-group-text bg-transparent"><i class="bi bi-person-fill"></i></div>
-              <input type="text" class="form-control" id="nome" placeholder="Nome:" name="nome">
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <label for="inputPassword4" class="form-label"></label>
-            <div class="input-group">
-              <div class="input-group-text bg-transparent"><i class="bi bi-telephone-fill"></i></div>
-              <input type="tel" class="form-control" id="telefone" placeholder="Tefefone:" name="telefone">
-            </div>  
-          </div>
-
-          <div class="col-md-12">
-            <label for="inputPassword4" class="form-label"></label> 
-            <div class="input-group">
-              <div class="input-group-text bg-transparent aleatorio"><i class="bi bi-envelope-fill"></i></div>
-              <input type="email" class="form-control" id="email" placeholder="E-mail:" name="email">
-            </div>  
-          </div>
-          
-
-              <h2 class="text-center">O que deseja doar?</h2>
-           <section class="d-flex justify-content-between">
-              <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="roupas" name="roupas" value="Roupas">
-                <label class="form-check-label" for="roupas">Roupas</label>
-              </div>
-
-              <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="cobertores" value="Cobertores">
-                <label class="form-check-label" for="cobertores">Cobertores</label>
-              </div>
-
-              <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="calcados" name="calcados" value="Calçados">
-                <label class="form-check-label" for="calcados">Calçados</label>
-              </div>
-           </section>
-
-
-            <!-- Endereço  -->
-
-           
-            </div>  
-          <h2 class="text-center mt-5">Endereço</h2>  
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label"></label>
-            <div class="input-group">
-              <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="text" class="form-control" id="cep" maxlength="10" placeholder="CEP: " name="cep" required>
-              
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <label for="inputPassword4" class="form-label"></label> 
-            <div class="input-group">
-              <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
-              <input type="text" class="form-control" id="endereco" placeholder="Endereço:" name="endereco">
-            </div>  
-          </div>
-          
-          <div class="col-md-6">
-            <label for="inputAddress" class="form-label"></label>
-            <div class="input-group">
-              <div class="input-group-text bg-transparent"><i class="bi bi-123"></i></div>
-              <input type="number" class="form-control" id="numero" placeholder="Número:" name="numero">
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <label for="inputAddress" class="form-label"></label>
-            <div class="input-group ">
-              <div class="input-group-text bg-transparent"><i class="bi bi-geo-alt-fill"></i></div>
-              <input type="text" class="form-control" id="complemento" placeholder="Complemento:" name="complemento">
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <label for="inputAddress" class="form-label"></label>
-            <div class="input-group ">
-              <div class="input-group-text bg-transparent"><i class="bi bi-house-fill"></i></div>
-              <input type="text" class="form-control" id="bairro" placeholder="Bairro:" name="bairro">
-            </div>
-          </div>
-
-          <div class="col-6 ">
-            <label for="inputCity" class="form-label"></label>
-            <div class="input-group ">
-              <div class="input-group-text bg-transparent"><i class="bi bi-house-door-fill"></i></div>
-              <input type="text" class="form-control" id="cidade" placeholder="Cidade: " name="cidade">
-            </div>
-          </div>
-      
-          <a href="lgpd.php" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a>
-          
-          <div class="col-12 mt-4 mb-4 text-end">
-            <button name="enviar" type="submit" id="enviar" class="btn btn-primary">Enviar</button>
-          </div>
-
-
-      </form>
-    </section>
     <script src="js/jquery-3.6.0min.js"></script>
     <script src="js/vanilla-masker.min.js"></script>
     <script src="js/cep.js"></script>

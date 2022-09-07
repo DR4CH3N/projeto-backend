@@ -11,7 +11,7 @@ final class Cadastro {
     private string $numero;
     private string $bairro;
     private string $complemento;
-    private int $usuarioId;
+    
     public Usuario $usuario;
     private PDO $conexao;
     
@@ -19,13 +19,33 @@ final class Cadastro {
         $this->usuario = new Usuario;
         $this->conexao = $this->usuario->getConexao();
     }
+
+    public function inserir():void{
+        $sql = "INSERT INTO cadastro(telefone, endereco, cep, cidade, numero, bairro, complemento, usuario_id) VALUES (:telefone, :endereco, :cep, :cidade, :numero, :bairro, :complemento, :usuario_id)";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
+            $consulta->bindParam(":endereco", $this->endereco, PDO::PARAM_STR);
+            $consulta->bindParam(":cep", $this->cep, PDO::PARAM_STR);
+            $consulta->bindParam(":cidade", $this->cidade, PDO::PARAM_STR);
+            $consulta->bindParam(":numero", $this->numero, PDO::PARAM_STR);
+            $consulta->bindParam(":bairro", $this->bairro, PDO::PARAM_STR);
+            $consulta->bindParam(":complemento", $this->complemento, PDO::PARAM_STR);
+            
+            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro: ".$erro->getMessage());
+        }
+    }
    
     public function listarUsuario():array{
         /* fazer inner/right join depois com a tabela cadastro (para poder listar nomes e endereços dos usuarios) e poder ordenar por nome */
-        $sql = "SELECT usuarios.id, usuarios.nome, usuarios.email, cadastro.telefone, cadastro.endereco, cadastro.cep, cadastro.cidade, cadastro.numero, cadastro.complemento, cadastro.bairro FROM cadastro RIGHT JOIN usuarios
+        $sql = "SELECT usuarios.id, usuarios.nome, usuarios.email, cadastro.telefone, cadastro.endereco, cadastro.cep, cadastro.cidade, cadastro.numero, cadastro.complemento, cadastro.bairro FROM cadastro LEFT JOIN usuarios
         ON cadastro.usuario_id = usuarios.id";
         try{
             $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
         } catch(Exception $erro){
@@ -36,7 +56,7 @@ final class Cadastro {
 
     
     public function listarUm():array{
-        $sql = "SELECT usuarios.id, usuarios.nome, usuarios.email, cadastro.telefone, cadastro.endereco, cadastro.cep, cadastro.cidade, cadastro.numero, cadastro.complemento, cadastro.bairro FROM cadastro RIGHT JOIN usuarios";
+        $sql = "SELECT usuarios.id, usuarios.nome, usuarios.email, cadastro.telefone, cadastro.endereco, cadastro.cep, cadastro.cidade, cadastro.numero, cadastro.complemento, cadastro.bairro usuario_id, doacoes_id FROM cadastro RIGHT JOIN usuarios WHERE id = :id AND usuario_id = :usuario_id";
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
@@ -48,23 +68,7 @@ final class Cadastro {
         return $resultado;
     }
 
-    public function InserirCadastro(){
-        $sql = "INSERT INTO cadastro(telefone, endereco, cep, cidade, numero, bairro, complemento, usuario_id) VALUES (:telefone, :endereco, :cep, :cidade, :numero, :bairro, :complemento, :usuario_id)";
-        try {
-            $consulta = $this->conexao->prepare($sql);
-            $consulta->bindParam(":telefone", $this->telefone, PDO::PARAM_STR);
-            $consulta->bindParam(":endereco", $this->endereco, PDO::PARAM_STR);
-            $consulta->bindParam(":cep", $this->cep, PDO::PARAM_STR);
-            $consulta->bindParam(":cidade", $this->cidade, PDO::PARAM_STR);
-            $consulta->bindParam(":numero", $this->numero, PDO::PARAM_STR);
-            $consulta->bindParam(":bairro", $this->bairro, PDO::PARAM_STR);
-            $consulta->bindParam(":complemento", $this->complemento, PDO::PARAM_STR);
-            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
-            $consulta->execute();
-        } catch (Exception $erro) {
-            die("Erro: ".$erro->getMessage());
-        }
-    }
+    
    
     public function getId(): int
     {
@@ -120,13 +124,13 @@ final class Cadastro {
 
     }
 
-    public function getUsuarioId(): int
+    public function getDoacoesId(): int
     {
-        return $this->usuarioId;
+        return $this->doacoesId;
     }
-    public function setUsuarioId(int $usuarioId)
+    public function setDoacoesId(int $doacoesId)
     {
-        $this->usuarioId = filter_var($usuarioId, FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->doacoesId = filter_var($doacoesId, FILTER_SANITIZE_NUMBER_INT);
     }
 
     public function getBairro(): string
