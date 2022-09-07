@@ -90,8 +90,8 @@ if (isset($_POST['enviar'])) {
       <div class="my-2">
           <label for="inputPassword4" class="form-label"></label>
           <div class="input-group">
-              <div class="input-group-text bg-transparent"><i class="bi bi-telephone-fill"></i></div>
-              <input type="tel" class="form-control" id="telefone" placeholder="Tefefone:" name="telefone">
+            <div class="input-group-text bg-transparent"><i class="bi bi-telephone-fill"></i></div>
+            <input type="tel" class="form-control" id="telefone" placeholder="Tefefone:" name="telefone">
           </div>  
        </div>
 
