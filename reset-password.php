@@ -29,7 +29,7 @@ use CalorDado\Usuario;
         <h2 class="text-center text-white  mb-4">Recuperar senha</h2>
         <p class="text-white text-center">Coloque o E-mail relacionado a conta abaixo que mandaremos um email com link para mudar sua senha.</p>
 
-        <form  action="" method="post" id="form-login" name="form-login">
+        <form action="inc/reset-request.inc.php" method="post" id="form-login" name="form-login">
           <!-- Email input -->
           <div class="form-outline mb-2">
             <input type="email" name="email" id="email" class="form-control form-control-lg"

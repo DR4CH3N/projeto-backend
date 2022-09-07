@@ -1,5 +1,7 @@
 <?php
 
+require "../src/Banco.php";
+
 if (isset($_POST["reset-request-submit"])) {
     /* entendendo a logica: a variavel $token, pela funcao random bytes ira gerar letras e simbolos aleatorios no link, para que ninguem possa ter acesso a ela alem do usuario que quiser recuperar sua senha.
 
@@ -20,7 +22,8 @@ if (isset($_POST["reset-request-submit"])) {
     $expiracao = date("U") + 600;
 
     /* aqui ele vai fazer a conexao com o banco, por isso o require */
-    require 'Banco.php';
+
+    
 
     /* ele vai pegar o campo email do formulario */
     $emailUsuario = $_POST["email"];
@@ -71,8 +74,8 @@ if (isset($_POST["reset-request-submit"])) {
     /* o \r e \n servem para ir para uma nova linha no PHP */
     
     /* email temporario sendo usado apenas para testes, colocar o email da calor dado depois */
-    $headers = "de Calor dado <(degehi9598@otodir.com)>\r\n";
-    $headers .= "Responder para: <(degehi9598@otodir.com)>\r\n";
+    $headers = "de Calor dado <(kimlayagne@vusra.com)>\r\n";
+    $headers .= "Responder para: <(kimlayagne@vusra.com)>\r\n";
     $headers .= "Content-type: text/html\r\n";
 
     
