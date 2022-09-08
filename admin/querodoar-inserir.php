@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
   $cadastro = new Cadastro;
   $usuario->setId($_GET['id']);
   $dados = $usuario->listarUm();
-/*   if(isset($_POST['enviar'])){
+  if(isset($_POST['enviar'])){
     $cadastro->setId($_GET['id']);
     $cadastro->setTelefone($_POST['telefone']);
     $cadastro->setEndereco($_POST['endereco']);
@@ -17,8 +17,10 @@ if (isset($_GET['id'])) {
     $cadastro->setComplemento($_POST['complemento']);
     $cadastro->setBairro($_POST['bairro']);
     $cadastro->setCidade($_POST['cidade']);
+    
+   
     $cadastro->inserir();
-  }  */ 
+  }  
 }
 ?>
       
@@ -63,7 +65,7 @@ if (isset($_GET['id'])) {
               </div>
 
               <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="cobertores" value="doacao[]">
+                <input class="form-check-input" type="checkbox" id="cobertores" name="doacao[]" value="cobertores">
                 <label class="form-check-label" for="cobertores">Cobertores</label>
               </div>
 
@@ -73,7 +75,7 @@ if (isset($_GET['id'])) {
               </div>
            </section>
 
-
+           
             <!-- Endereço  -->
 
            
@@ -137,7 +139,7 @@ if (isset($_GET['id'])) {
 
       </form>
     </section>
-    <script src="js/jquery-3.6.0min.js"></script>
-    <script src="js/vanilla-masker.min.js"></script>
-    <script src="js/cep.js"></script>
+    <script src="../js/jquery-3.6.0min.js"></script>
+    <script src="../js/vanilla-masker.min.js"></script>
+    <script src="../js/cep.js"></script>
     <?php require_once "../inc/rodape-admin.php"; ?>
