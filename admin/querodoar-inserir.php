@@ -74,7 +74,7 @@ if(isset($_POST['enviar'])){
               </div>
 
               <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="calcados" name="calcados" <?php if(empty($_POST[]))?>value="1">
+                <input class="form-check-input" type="checkbox" id="calcados" name="calcados" value="1">
                 <label class="form-check-label" for="calcados">Calçados</label>
               </div>
            </section>
