@@ -71,10 +71,10 @@ if (isset($_GET['acesso_proibido'])) {
             <input type="password" name="senha" id="senha" class="form-control form-control-lg"
               placeholder="Senha" />
             <label class="form-label" for="form3Example4"></label>
-          </div>
+          </div>  
 
           <div class="d-flex justify-content-between align-items-center">
-            <a href="recuperar-senha.php" class="politica col-12 text-start">Esqueceu a senha ?</a>
+            <a href="recuperar-senha.php" class="politica col-12 text-start">Esqueceu a senha?</a>
           </div>
 
           <button class="btn btn-primary btn-lg mt-3 col-12" name="entrar" type="submit">Entrar</button>

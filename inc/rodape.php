@@ -5,7 +5,7 @@
       <div class="col-md-4 col-xl-4 col-xxl-4 mt-5 pt-2 ms-md-3 ms-xl-0 ms-xxl-4 ps-xxl-5 pt-xxl-2">
         <img src="img/img-logos/logo-calor-dado-min.png" alt="Logo-calor-dado">
         <div class="m-1 p-2 p-md-0 m-md-0 p-lg-1 m-lg-0 p-xl-3 p-xxl-2 m-xxl-2">  
-          <span>Somos a Quero Doar, uma organização voltada para facilitar a coleta e distribuição de doações.</span>
+          <span>Somos a Calor dado, uma organização voltada para facilitar a coleta e distribuição de doações.</span>
         </div>
       </div>      
       <div class="col-md-4 col-xl-4 col-xxl-4 mb-3 mt-5 pt-md-4">

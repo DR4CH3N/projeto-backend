@@ -77,15 +77,3 @@ ALTER TABLE `cadastro` ADD `Quantidade` INT NOT NULL AFTER `doacao`;
 ```sql
 ALTER TABLE `usuarios` ADD `Tipo` ENUM('admin', 'usuario') NOT NULL AFTER `senha`;
 ```
-
-## adicionar tabela nova para recuperacao de senha
-
-```sql
-CREATE TABLE resetsenha(
-    pwdSenhaId INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL, 
-    pwdResetEmail TEXT NOT NULL,
-    pwdResetSelecionador TEXT NOT NULL,
-    pwdResetToken LONGTEXT NOT NULL,
-    pwdResetExpiracao TEXT NOT NULL
-);
-```
