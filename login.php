@@ -76,17 +76,9 @@ if (isset($_GET['acesso_proibido'])) {
               placeholder="Senha" />
             <label class="form-label" for="form3Example4"></label>
           </div>  
-        <?php
-          if (isset($_GET["reset"])) {
-          if ($_GET["reset"] == "sucesso") {
-          echo '<p> class="entradasucesso">Cheque seu E-mail!</p>';
-          }
-        }
-
-        ?>
 
           <div class="d-flex justify-content-between align-items-center">
-            <a href="reset-password.php" class="politica col-12 text-start">Esqueceu a senha?</a>
+            <a href="recuperar-senha.php" class="politica col-12 text-start">Esqueceu a senha?</a>
           </div>
 
           <button class="btn btn-primary btn-lg mt-3 col-12" name="entrar" type="submit">Entrar</button>

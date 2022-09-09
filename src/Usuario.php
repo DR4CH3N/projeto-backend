@@ -80,6 +80,8 @@ final class Usuario {
         }
     }
 
+    
+
     public function buscar(){
         $sql= "SELECT * FROM usuarios WHERE email = :email";
         try {
@@ -96,6 +98,8 @@ final class Usuario {
     public function codificaSenha(string $senha):string{
         return password_hash($senha, PASSWORD_DEFAULT);
     }
+
+
     /* Usamos password_verify para comparar as 2, a digitada no formulário e a existente no banco */
     public function verificarSenha(string $senhaFormulario, string $senhaBanco):string {
         if (password_verify($senhaFormulario, $senhaBanco)) {
@@ -106,6 +110,20 @@ final class Usuario {
            return $this->codificaSenha($senhaFormulario);
         }
     }
+
+    public function novaSenha(){
+        $novaSenha = substr(password_hash(time(), PASSWORD_DEFAULT), 7, 8);
+        $nsCripto = password_hash($novaSenha, PASSWORD_DEFAULT);
+        $sql = "UPDATE usuarios SET senha = :senha WHERE id = :id";
+      try{
+        $consulta = $this->conexao->prepare($sql);
+        $consulta->bindParam(':senha', $nsCripto, PDO::PARAM_STR);
+        $consulta->bindParam(':id', $this->id, PDO::PARAM_INT);
+        $consulta->execute();
+      } catch (Exception $erro) { 
+        die ("Erro: ". $erro->getMessage());
+    } return $novaSenha;
+}
 
     public function getId(): int
     {
