@@ -7,7 +7,8 @@ final class Doacao{
     private int $roupas;
     private int $calcados;
     private int $cobertores;
-    public Cadastro $doacoesId;
+    private int $usuarioId;
+    public Cadastro $cadastro;
     private string $pix;
 
 
@@ -29,6 +30,20 @@ final class Doacao{
     }
    
 
+    public function inserir():void{
+        $sql = "INSERT INTO doacoes(roupas, calcados, cobertores, usuario_id) VALUES (:roupas, :calcados, :cobertores, :usuario_id)";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindParam(":roupas", $this->roupas, PDO::PARAM_INT);
+            $consulta->bindParam(":calcados", $this->calcados, PDO::PARAM_INT);
+            $consulta->bindParam(":cobertores", $this->cobertores, PDO::PARAM_INT);
+            $consulta->bindParam(":usuario_id", $this->usuarioId, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro: ".$erro->getMessage());
+        }
+    }
+
    
     public function getId(): int
     {
@@ -45,7 +60,7 @@ final class Doacao{
     }
     public function setRoupas(int $roupas)
     {
-        $this->roupas = filter_var($roupas, FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->roupas = filter_var($roupas, FILTER_SANITIZE_NUMBER_INT);
     }
 
     public function getCalcados(): int
@@ -54,7 +69,7 @@ final class Doacao{
     }
     public function setCalcados(int $calcados)
     {
-        $this->calcados = filter_var($calcados, FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->calcados = filter_var($calcados, FILTER_SANITIZE_NUMBER_INT);
     }
 
     public function getCobertores(): int
@@ -63,7 +78,7 @@ final class Doacao{
     }
     public function setCobertores(int $cobertores)
     {
-        $this->cobertores = filter_var($cobertores, FILTER_SANITIZE_SPECIAL_CHARS);
+        $this->cobertores = filter_var($cobertores, FILTER_SANITIZE_NUMBER_INT);
     }
 
     public function getPix(): string
@@ -73,5 +88,29 @@ final class Doacao{
     public function setPix(string $pix)
     {
         $this->pix = filter_var($pix, FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+
+    /**
+     * Get the value of usuarioId
+     *
+     * @return int
+     */
+    public function getUsuarioId(): int
+    {
+        return $this->usuarioId;
+    }
+
+    /**
+     * Set the value of usuarioId
+     *
+     * @param int $usuarioId
+     *
+     * @return self
+     */
+    public function setUsuarioId(int $usuarioId): self
+    {
+        $this->usuarioId = $usuarioId;
+
+        return $this;
     }
 }
