@@ -41,6 +41,7 @@ if (isset($_GET['acesso_proibido'])) {
 
 ?>
 
+<<<<<<< Updated upstream
   
   <section class="row d-flex justify-content-center p-5 login ">
     <?php if(isset($feedback)){?>
@@ -48,6 +49,11 @@ if (isset($_GET['acesso_proibido'])) {
 			  <?=$feedback?>
 			</p>
     <?php } ?>
+=======
+
+
+  <section class="row d-flex justify-content-center p-5 login">
+>>>>>>> Stashed changes
     <div class=" row delimagens text-center col-lg-6 col-xxl-4 bg-white rounded-start">
       <h1 class="mb-4 mt-4">Bem-Vindo de volta!</h1>
       <p>Para se manter conectado conosco faça login com suas informações pessoais.</p>
