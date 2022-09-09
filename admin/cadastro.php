@@ -5,13 +5,13 @@ use CalorDado\Utilitarios;
 require_once "../inc/cabecalho-admin.php";
 $cadastro = new Cadastro;
 $listaDeCadastro = $cadastro->listarUsuario();
-$sessao->verfificaAcessoAdmin();
+
 ?>
 <div class="row container-fluid m-auto">
 	<article class="col-12 bg-white rounded  my-1 py-4">
 		
 		<h2 class="text-center">
-		Cadastros <span class="badge bg-dark"><?=count($listaDeCadastro)?></span>
+		Cadastros <span class="badge bg-dark"></span>
 		</h2>
 
 		
