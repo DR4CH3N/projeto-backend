@@ -1,34 +1,38 @@
 <?php
 use CalorDado\Cadastro;
+use CalorDado\Doacao;
 use CalorDado\Usuario;
 use CalorDado\Utilitarios;
 require_once "../inc/cabecalho-usuario.php";
+$doacao = new Doacao;
 if (isset($_GET['id'])) {
 	$usuario = new Usuario;
   $cadastro = new Cadastro;
   $usuario->setId($_GET['id']);
   $dados = $usuario->listarUm();
-  if(isset($_POST['enviar'])){
-    $cadastro->setId($_GET['id']);
-    $cadastro->setTelefone($_POST['telefone']);
-    $cadastro->setEndereco($_POST['endereco']);
-    $cadastro->setNumero($_POST['numero']);
-    $cadastro->setCep($_POST['cep']);
-    $cadastro->setComplemento($_POST['complemento']);
-    $cadastro->setBairro($_POST['bairro']);
-    $cadastro->setCidade($_POST['cidade']);
-    
-   
-    $cadastro->inserir();
-  }  
 }
+if(isset($_POST['enviar'])){
+  $cadastro->setTelefone($_POST['telefone']);
+  $cadastro->setEndereco($_POST['endereco']);
+  $cadastro->setNumero($_POST['numero']);
+  $cadastro->setCep($_POST['cep']);
+  $cadastro->setComplemento($_POST['complemento']);
+  $cadastro->setBairro($_POST['bairro']);
+  $cadastro->setCidade($_POST['cidade']);
+  $cadastro->doacao->setCobertores($_POST['cobertores']);
+  $cadastro->doacao->setCalcados($_POST['calcados']);
+  $cadastro->doacao->setRoupas($_POST['roupas']);
+  
+  $cadastro->inserir();
+}  
+Utilitarios::dump($doacao);
 ?>
       
   <!-- Espaço do conteudo e fomulário, seguir como esta no layout, as imagens ja estao na pasta-->
 
     <section class="container mt-lg-4 pt-4" 
     >
-      <form action="" method="post" id="formulario" class="row g-3">
+      <form action="" method="post" class="row g-3">
         <h2 class="text-center mt-5 mt-md-0">QUERO FAZER MINHA DOAÇÃO</h2> 
 
           <div class="col-md-6">
