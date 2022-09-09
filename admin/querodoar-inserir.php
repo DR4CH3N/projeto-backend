@@ -2,12 +2,10 @@
 use CalorDado\Cadastro;
 use CalorDado\Doacao;
 use CalorDado\Usuario;
-use CalorDado\Utilitarios;
 require_once "../inc/cabecalho-usuario.php";
 if (isset($_GET['id'])) {
 	$usuario = new Usuario;
   $cadastro = new Cadastro;
-  
   $usuario->setId($_GET['id']);
   $dados = $usuario->listarUm();
 }
@@ -23,33 +21,17 @@ if(isset($_POST['enviar'])){
   $calcados = intval($_POST['calcados']);
   $cobertores = intval($_POST['cobertores']);
   $roupas = intval($_POST['roupas']);
-
-
-$doacao = new Doacao;
-
-
-
-$doacao->setCobertores($cobertores);
-$doacao->setCalcados($calcados);
-$doacao->setRoupas($roupas);
-$doacao->setUsuarioId($_GET['id']);
-
-
-$doacao->inserir();  
-$cadastro->inserir();
-  
-  // header('location:doacao_insere.php?id=' . $dados['id']);
-
+  $doacao = new Doacao;
+  $doacao->setCobertores($cobertores);
+  $doacao->setCalcados($calcados);
+  $doacao->setRoupas($roupas);
+  $doacao->setUsuarioId($_GET['id']);
+  $doacao->inserir();  
+  $cadastro->inserir();
 }  
-Utilitarios::dump($calcados);
-Utilitarios::dump($cobertores);
-Utilitarios::dump($roupas);
 ?>
-      
   <!-- Espaço do conteudo e fomulário, seguir como esta no layout, as imagens ja estao na pasta-->
-
-    <section class="container mt-lg-4 pt-4" 
-    >
+    <section class="container mt-lg-4 pt-4">
       <form action="" method="post" class="row g-3">
         <h2 class="text-center mt-5 mt-md-0">QUERO FAZER MINHA DOAÇÃO</h2> 
 
@@ -92,7 +74,7 @@ Utilitarios::dump($roupas);
               </div>
 
               <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="calcados" name="calcados" value="1">
+                <input class="form-check-input" type="checkbox" id="calcados" name="calcados" <?php if(empty($_POST[]))?>value="1">
                 <label class="form-check-label" for="calcados">Calçados</label>
               </div>
            </section>

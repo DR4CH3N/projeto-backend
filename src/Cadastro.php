@@ -41,10 +41,9 @@ final class Cadastro {
     public function listarUsuario():array{
         /* fazer inner/right join depois com a tabela cadastro (para poder listar nomes e endereços dos usuarios) e poder ordenar por nome */
         $sql = "SELECT usuarios.id, usuarios.nome, usuarios.email, cadastros.telefone, cadastros.endereco, cadastros.cep, cadastros.cidade, cadastros.numero, cadastros.complemento, cadastros.bairro FROM cadastros LEFT JOIN usuarios
-        ON cadastro.usuario_id = usuarios.id";
+        ON cadastros.usuario_id = usuarios.id";
         try{
             $consulta = $this->conexao->prepare($sql);
-            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
         } catch(Exception $erro){
