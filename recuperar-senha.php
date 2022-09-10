@@ -42,7 +42,7 @@ if( isset($_GET['campo_obrigatorio'])) {
 
         <?php if(isset($feedback)){?>
 				  <p class="my-2 alert alert-warning text-center">
-			    <?= $feedback?> <i class="bi bi-x-circle-fill"></i> </p>
+			    <?= $feedback?> <i class=""></i> </p>
         <?php } ?>
 
         <form action="" method="post" id="form-login" name="form-login">
@@ -103,7 +103,7 @@ if (empty($_POST['email'])){
         $mail->Port = 2525;
         
         // Quem envia
-        $mail->setFrom('fulano@outlook.com');
+        $mail->setFrom('suporte@calordado.com.br');
 
         // Para quem responder
         $mail->addReplyTo('no-reply@email.com.br');
