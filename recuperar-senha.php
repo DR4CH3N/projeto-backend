@@ -98,13 +98,17 @@ if (empty($_POST['email'])){
         $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'tls';
-        $mail->Username = 'c1495e88955fa0';
-        $mail->Password = '37e3f22486e5b5';
+        $mail->Username = '7fb659e987c901';
+        $mail->Password = '95e59bc2a080bf';
         $mail->Port = 2525;
         
-        
-        $mail->setFrom('suporte@calordado.com.br');
-        $mail->addReplyTo('no-replycalordado@email.com.br');
+        // Quem envia
+        $mail->setFrom('fulano@outlook.com');
+
+        // Para quem responder
+        $mail->addReplyTo('no-reply@email.com.br');
+
+        // Quem recebe
         $mail->addAddress($recuperaEmail, $dados['nome']);
         
         
