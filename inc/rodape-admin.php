@@ -28,9 +28,6 @@
     </svg>
   </section>
  <!-- FIM DO Footer -->
-
-  <script src="js/menu.js"></script>
-  
 </body>
 </html>
 <?php ob_end_flush(); ?>

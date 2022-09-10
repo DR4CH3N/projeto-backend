@@ -5,7 +5,7 @@ require_once "../vendor/autoload.php";
 /* Criamos objeto para acessar os recursos de sessão PHP na classe ControleDeAcesso */
 $sessao = new ControleDeAcesso;
 /* Executamos VerificaAcesso para checar se tem alguém logado */
-/* $sessao->verfificaAcesso(); */
+$sessao->verfificaAcesso(); 
 /* Se o parâmetro ?sair existir, então faça o logout */
 if(isset($_GET['sair'])){
     $sessao->logout();

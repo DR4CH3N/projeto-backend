@@ -54,10 +54,9 @@ final class Cadastro {
 
     
     public function listarUm():array{
-        $sql = "SELECT usuarios.id, usuarios.nome, usuarios.email, cadastro.telefone, cadastro.endereco, cadastro.cep, cadastro.cidade, cadastro.numero, cadastro.complemento, cadastro.bairro usuario_id, doacoes_id FROM cadastro RIGHT JOIN usuarios WHERE id = :id AND usuario_id = :usuario_id";
+        $sql = "SELECT usuarios.id, usuarios.nome, usuarios.email, cadastros.telefone, cadastros.endereco, cadastros.cep, cadastros.cidade, cadastros.numero, cadastros.complemento, cadastros.bairro, usuario_id FROM cadastros LEFT JOIN usuarios ON cadastros.usuario_id = usuarios.id";
         try {
             $consulta = $this->conexao->prepare($sql);
-            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
@@ -157,13 +156,6 @@ final class Cadastro {
     {
         $this->telefone = filter_var($telefone, FILTER_SANITIZE_SPECIAL_CHARS);
     }
-
-
-    public function getConexao(): PDO
-    {
-        return $this->conexao;
-    }
-
  
     public function getUsuarioId(): int
     {

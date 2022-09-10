@@ -2,6 +2,8 @@
 use CalorDado\Cadastro;
 use CalorDado\Doacao;
 use CalorDado\Usuario;
+use CalorDado\Utilitarios;
+
 require_once "../inc/cabecalho-usuario.php";
 if (isset($_GET['id'])) {
 	$usuario = new Usuario;
@@ -22,13 +24,21 @@ if(isset($_POST['enviar'])){
   $cobertores = intval($_POST['cobertores']);
   $roupas = intval($_POST['roupas']);
   $doacao = new Doacao;
-  $doacao->setCobertores($cobertores);
-  $doacao->setCalcados($calcados);
-  $doacao->setRoupas($roupas);
+  if(empty($doacao)){
+		  $doacao->setCobertores($cobertores);
+      $doacao->setCalcados($calcados);
+      $doacao->setRoupas($roupas);
+	} 
+      
+ 
+   
   $doacao->setUsuarioId($_GET['id']);
   $doacao->inserir();  
   $cadastro->inserir();
 }  
+$listar = new Cadastro;
+$listar->setId($_GET['id']);
+
 ?>
   <!-- Espaço do conteudo e fomulário, seguir como esta no layout, as imagens ja estao na pasta-->
     <section class="container mt-lg-4 pt-4">
@@ -48,7 +58,7 @@ if(isset($_POST['enviar'])){
             <label for="inputPassword4" class="form-label"></label>
             <div class="input-group">
               <div class="input-group-text bg-transparent"><i class="bi bi-telephone-fill"></i></div>
-              <input type="tel" class="form-control" id="telefone" placeholder="Tefefone:" name="telefone">
+              <input type="tel" class="form-control" id="telefone" placeholder="Tefefone:" name="telefone" value="<?=$listarUm['telefone']?>">
             </div>  
           </div>
 
@@ -69,7 +79,7 @@ if(isset($_POST['enviar'])){
               </div>
 
               <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="cobertores" name="cobertores" value="1">
+                <input class="form-check-input" type="checkbox" id="cobertores" name="cobertores"  value="1">
                 <label class="form-check-label" for="cobertores">Cobertores</label>
               </div>
 

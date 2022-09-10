@@ -8,13 +8,13 @@ final class Doacao{
     private int $calcados;
     private int $cobertores;
     private int $usuarioId;
-    public Cadastro $cadastro;
+    public Usuario $usuario;
     private string $pix;
 
 
     public function __construct(){
-        $this->cadastro = new Cadastro;
-        $this->conexao = $this->cadastro->getConexao();
+        $this->usuario = new Usuario;
+        $this->conexao = $this->usuario->getConexao();
     }
 
     public function listar():array{
@@ -42,6 +42,19 @@ final class Doacao{
         } catch (Exception $erro) {
             die("Erro: ".$erro->getMessage());
         }
+    }
+
+    public function listarUm():array{
+        $sql= "SELECT roupas, calcados, cobertores, usuario_id FROM doacoes RIGHT JOIN usuarios 
+        ON doacoes.usuario_id = usuarios.id";
+        try{
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch(Exception $erro){
+            die("Erro: ".$erro->getMessage());
+        }
+        return $resultado;
     }
 
    

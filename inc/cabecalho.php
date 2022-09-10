@@ -3,17 +3,7 @@ ob_start();
 use CalorDado\Cadastro;
 require_once "./vendor/autoload.php";
 $cadastro = new Cadastro;
-/* 
-if(isset($_POST['enviar'])){
-  $cadastro->setTelefone($_POST['telefone']);
-  $cadastro->setEndereco($_POST['endereco']);
-  $cadastro->setNumero($_POST['numero']);
-  $cadastro->setCep($_POST['cep']);
-  $cadastro->setComplemento($_POST['complemento']);
-  $cadastro->setBairro($_POST['bairro']);
-  $cadastro->setCidade($_POST['cidade']);
-  $cadastro->InserirCadastro();
-} */
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

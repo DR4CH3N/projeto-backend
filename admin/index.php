@@ -16,26 +16,30 @@ require_once "../inc/cabecalho-admin.php"
 		site Calor Dado e seu <b>nível de acesso</b> é <span class="badge bg-dark"> <?=$_SESSION['tipo']?> </span>.</p>
 
         <div class="d-grid gap-2 d-md-block text-center">
-            <a class="btn btn-dark bg-gradient btn-lg" href="meu-perfil.php">
+            <a class="btn  btn-lg" href="meu-perfil.php">
                 <i class="bi bi-person"></i> <br>
                 Meu perfil
             </a>
             <?php  if($_SESSION['tipo'] === 'usuario') {  ?>   
-            <a class="btn btn-dark bg-gradient btn-lg" href="../admin/querodoar-inserir.php?id=<?=$_SESSION['id']?>">
+            <a class="btn btn-lg" href="../admin/querodoar-inserir.php?id=<?=$_SESSION['id']?>">
                 <i class="bi bi-person"></i> <br>
                  Doar 
             </a>
+            <a class="btn  btn-lg" href="minhas-doacoes.php?id=<?=$_SESSION['id']?>">
+                <i class="bi bi-tags"></i> <br>
+                Minhas doações
+            </a>
             <?php } ?> 
             <?php  if($_SESSION['tipo'] === 'admin') {  ?>    
-			<a class="btn btn-dark bg-gradient btn-lg" href="categorias.php">
+			<a class="btn  btn-lg" href="doacoes.php">
                 <i class="bi bi-tags"></i> <br>
                 Doações
             </a>
-            <a class="btn btn-dark bg-gradient btn-lg" href="usuarios.php">
+            <a class="btn btn-lg" href="usuarios.php">
                 <i class="bi bi-people"></i> <br>
                 Usuários
             </a>
-            <a class="btn btn-dark bg-gradient btn-lg" href="usuarios.php">
+            <a class="btn  btn-lg" href="cadastro.php">
                 <i class="bi bi-people"></i> <br>
                 Cadastros
             </a>  

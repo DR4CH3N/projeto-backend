@@ -10,7 +10,7 @@ $sessao->verfificaAcesso();
 if(isset($_GET['sair'])){
     $sessao->logout();
 }
-$pagina = basename($_SERVER['PHP_SELF']);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" class="h-100">
