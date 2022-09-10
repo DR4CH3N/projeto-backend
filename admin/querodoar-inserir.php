@@ -24,11 +24,11 @@ if(isset($_POST['enviar'])){
   $cobertores = intval($_POST['cobertores']);
   $roupas = intval($_POST['roupas']);
   $doacao = new Doacao;
-  if(empty($doacao)){
+
 		  $doacao->setCobertores($cobertores);
       $doacao->setCalcados($calcados);
       $doacao->setRoupas($roupas);
-	} 
+
       
  
    
