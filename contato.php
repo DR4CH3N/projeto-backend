@@ -65,13 +65,13 @@ if (isset($_POST['enviar'])) {
     </div>
     <!--  FORMULARIO PRA PODER INSERIR OS DADOS -->
 
-<div class="row m-auto">
+<div class="row m-auto ">
   <div class="col-lg-6 col-xxl-5 m-auto mt-5">
     <form action="" method="post" class="contatenos form-control">    
                     
       <h2 class="text-center">Contate-nos</h2>     
       
-      <div class="pb-2">
+      <div class="pb-2 ">
         <label for="inputPassword4" class="form-label"></label> 
         <div class="input-group">
           <div class="input-group-text bg-transparent"><i class="bi bi-person-fill"></i></div>
@@ -120,6 +120,7 @@ if (isset($_POST['enviar'])) {
       <h2>Localização</h2>
         <p>Av.paulista, 1500 - Bela Vista, são paulo - SP</P>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1784274189363!2d-46.65746628255615!3d-23.562034400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c925263541%3A0x4b30df73fca5a36b!2sAv.%20Paulista%2C%201500%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1653573464097!5m2!1spt-BR!2sbr" width="80%" height="485" class="border" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <!-- HEIGHT ESTAVA 485 ANTES -->
     </div>
   </div>
 </div>

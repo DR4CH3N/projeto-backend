@@ -28,7 +28,7 @@
     <p><strong>IX – Principio da Segurança:</strong> Informamos que utilizamos todas as medidas cabíveis e possíveis na seara técnica e administrativa, visando a maior proteção dos dados pessoais, desde o momento em que temos acesso a eles. As técnicas utilizadas buscam proteger os dados pessoais de todo e qualquer acesso não autorizado, bem como de situações que possam causar danos ao titular dos dados, ainda que acidentais ou ilícitas. As técnicas que utilizamos buscam trazer segurança e proteção ao titular dos dados que realizamos o tratamento, visto que são tomadas em busca de prevenir e proteger as informações coletadas de qualquer situação ilícita de perda, destruição, compartilhamento, comunicação ou difusão não autorizada. </p>
       
     <p><strong> X – Principio da responsabilização e prestação de contas:</strong> O agente irá demonstrar e comprovar que cumpre e respeita todas as normas cabíveis a Proteção de Dados Pessoais, adotando medidas adequadas para isso de maneira eficaz. O nosso site realiza todas as etapas referentes ao tratamento de dados pessoais dos usuários/clientes que o acessam, sem desrespeitar qualquer norma ou princípio presente na Lei 13.709/2018, tendo de forma clara e objetiva o fundamento da finalidade para o tratamento de cada informação pessoal coletada. </p>
-
+  
   </main>
 </section>
 <?php require_once "./inc/rodape.php"; ?>

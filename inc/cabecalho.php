@@ -25,6 +25,7 @@ $cadastro = new Cadastro;
   <!-- Inserindo o Bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  
 
   <!-- Linkando para CSS externo-->
   <link rel="stylesheet" href="style.css">
@@ -44,8 +45,7 @@ $cadastro = new Cadastro;
             <li><a href="quemsomos.php" title="página quem somos">QUEM SOMOS</a></li>
             <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
             <li><a href="contato.php" title="página contato">CONTATO</a></li>
-            <li><a href="login.php">Login</a>
-            </li>
+            <li><a class="botao"  href="login.php" role="button" >Entrar</a></li>
           </ul>
       </nav>
     </div>
