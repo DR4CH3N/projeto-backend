@@ -147,7 +147,7 @@ $listar->setId($_GET['id']);
             </div>
           </div>
       
-          <a href="lgpd.php" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a>
+          <a href="../lgpd.php" class="politica" title="Página de Política de Privacidade">Política de Privacidade</a>
           
           <div class="col-12 mt-4 mb-4 text-end">
             <button name="enviar" type="submit" id="enviar" class="btn btn-primary">Enviar</button>
