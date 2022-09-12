@@ -20,17 +20,20 @@ if(isset($_POST['enviar'])){
   $cadastro->setBairro($_POST['bairro']);
   $cadastro->setCidade($_POST['cidade']);
   $cadastro->setUsuarioId($_GET['id']);
+
+  $_POST['calcados'] = ( isset($_POST['calcados']) ) ? true : null;
+  $_POST['cobertores'] = ( isset($_POST['cobertores']) ) ? true : null;
+  $_POST['roupas'] = ( isset($_POST['roupas']) ) ? true : null;
+
   $calcados = intval($_POST['calcados']);
   $cobertores = intval($_POST['cobertores']);
   $roupas = intval($_POST['roupas']);
+
   $doacao = new Doacao;
 
-		  $doacao->setCobertores($cobertores);
-      $doacao->setCalcados($calcados);
-      $doacao->setRoupas($roupas);
-
-      
- 
+	$doacao->setCobertores($cobertores);
+  $doacao->setCalcados($calcados);
+  $doacao->setRoupas($roupas);
    
   $doacao->setUsuarioId($_GET['id']);
   $doacao->inserir();  
@@ -74,17 +77,17 @@ $listar->setId($_GET['id']);
               <h2 class="text-center">O que deseja doar?</h2>
            <section class="d-flex justify-content-between">
               <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="roupas" name="roupas" value="1">
+                <input class="form-check-input" type="checkbox" name="roupas" checked="checked" value="1">
                 <label class="form-check-label" for="roupas">Roupas</label>
               </div>
 
               <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="cobertores" name="cobertores"  value="1">
+                <input class="form-check-input" type="checkbox"  name="cobertores" checked="checked" value="1">
                 <label class="form-check-label" for="cobertores">Cobertores</label>
               </div>
 
               <div class="form-check form-check-inline text-center">
-                <input class="form-check-input" type="checkbox" id="calcados" name="calcados" value="1">
+                <input class="form-check-input" type="checkbox" name="calcados" checked="checked" value="1">
                 <label class="form-check-label" for="calcados">Calçados</label>
               </div>
            </section>

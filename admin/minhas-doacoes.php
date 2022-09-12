@@ -34,9 +34,10 @@ Utilitarios::dump($dado);
 				<tbody>
 
 					<tr>
-						<td>
-
-                        </td>
+						<td>  <?=$dado['roupas']?> </td>
+						<td> <?=$dado['cobertores']?> </td>
+						<td> <?=$dado['calcados']?> </td>
+						<td>  </td>
 					</tr>
 
 				</tbody>                

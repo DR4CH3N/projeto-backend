@@ -44,19 +44,8 @@ final class Doacao{
         }
     }
 
-    public function listarUm():array{
-        $sql= "SELECT roupas, calcados, cobertores, usuario_id FROM doacoes RIGHT JOIN usuarios 
-        ON doacoes.usuario_id = usuarios.id";
-        try{
-            $consulta = $this->conexao->prepare($sql);
-            $consulta->execute();
-            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
-        } catch(Exception $erro){
-            die("Erro: ".$erro->getMessage());
-        }
-        return $resultado;
-    }
 
+    
    
     public function getId(): int
     {
