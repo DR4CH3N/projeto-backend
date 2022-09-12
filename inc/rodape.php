@@ -1,6 +1,6 @@
 </section>
 <!-- Início Footer -->
-<footer class="text-center">
+<footer class="text-center ">
     <section class="container-fluid row m-auto border-top">
       <div class="col-md-4 col-xl-4 col-xxl-4 mt-5 pt-2 ms-md-3 ms-xl-0 ms-xxl-4 ps-xxl-5 pt-xxl-2">
         <img src="img/img-logos/logo-calor-dado-min.png" alt="Logo-calor-dado">
@@ -8,7 +8,7 @@
           <span>Somos a Calor Dado, uma organização voltada para facilitar a coleta e distribuição de doações.</span>
         </div>
       </div>      
-      <div class="col-md-4 col-xl-4 col-xxl-4 mb-3 mt-5 pt-md-4">
+      <div class="col-md-4 col-xl-4 col-xxl-4 mb-3 mt-5 pt-md-4 corlogo">
         <h5>Contato</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="https://www.bing.com/maps?osid=098d5f2d-50f8-4638-adc8-79863c0c76c2&cp=-22.687322~-50.101381&lvl=7&imgid=07691d95-1785-4eb6-b01d-249f14c75ee5&v=2&sV=2&form=S00027" class="nav-link p-0 text-muted">São Paulo - SP, BR</a></li>
@@ -17,7 +17,8 @@
           <li class="nav-item mb-2"><a href="https://api.whatsapp.com/send?phone=5511969520059&text=Envie%20sua%20Mesagem%3A" class="nav-link p-0 text-muted">+(11) 99999-9999</a></li>
         </ul>
       </div>
-      <div class="col-md-3  col-xl-4 col-xxl-3 mt-5 pt-md-4  mb-5">
+
+      <div class="col-md-3  col-xl-4 col-xxl-3 mt-5 pt-md-4  mb-5 corlogo">
         <h5>Mapa do site</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="index.php" class="nav-link p-0 text-muted">Home</a></li>
@@ -40,14 +41,14 @@
     </section>
   </footer>
 <!-- Copyright -->
-  <section class="container-fluid copy py-3">
-    <div class="text-center">  
+  <section class="container-fluid copy py-3 ">
+    <div class="text-center">
       <div class="col">
         <p class="">
-          <a class="ms-3" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a>
-          <a class="ms-3" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a>
-          <a class="ms-3" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a>
-          <a class="ms-3" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-whatsapp" viewBox="0 0 16 16">
+          <a class="ms-3" target="_blank" href="https://www.twitter.com"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a>
+          <a class="ms-3" target="_blank" href="https://www.instagram.com"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a>
+          <a class="ms-3" target="_blank" href="https://www.facebook.com"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a>
+          <a class="ms-3" target="_blank" href="https://www.whatsapp.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-whatsapp" viewBox="0 0 16 16">
           <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
           </svg></a>
         </p>
@@ -71,6 +72,7 @@
  <!-- FIM DO Footer -->
   
  <script src="js/menu.js"></script>
+ 
 
 </body>
 </html>

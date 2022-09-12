@@ -60,7 +60,7 @@ nav, nav p {
 
 /* icone que abre o menu no mobile */
 .icone {
-    color: rgb(77, 72, 72);
+    color:  rgb(0, 134, 221);
     font-size: 1.5rem;
     padding: .5rem;
     height: 50px;
@@ -80,11 +80,13 @@ nav, nav p {
 
 /* cor de fundo quando passa o mouse em cima */
 .menu a:hover, .menu a:active {
-    background-color: rgb(236, 236, 236);
+    /* background-color: rgb(236, 236, 236); */
+    background-color: rgb(0, 134, 221);
     border-radius: 5px;
+    color: rgb(255, 255, 255);
 }
 .contatenos {
-    background-color: rgb(236, 236, 236);
+    background-color: #E0E4F0;
 }
 
 /* configuraçao do menu mobile do js */
@@ -120,20 +122,32 @@ header .limitador {
 .login{
     background-color: #eff7fd;
 }
+
 .copy {
-    background-color: rgb(77, 72, 72);
+   background-color:  #333;
+   color: white;
 }
+
+.corlogo{
+    color: #3384d9;
+}
+
 svg:hover {
     fill: rgb(0, 134, 221);    
 }
-svg {
+svg, .entrar {
     fill:#fff;
 }
 
-.btn, .destaque {
+
+.btn {
     background-color:  rgb(0, 134, 221);
     color: #fff;
 
+}
+
+.destaque{
+    background-color: #3384d9;
 }
 
 .politica {
@@ -191,5 +205,4 @@ svg {
     
   
 }
-
 
