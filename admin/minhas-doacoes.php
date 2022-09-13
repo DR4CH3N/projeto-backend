@@ -34,9 +34,7 @@ Utilitarios::dump($dado);
 				<tbody>
 
 					<tr>
-						<td>
-
-                        </td>
+						
 					</tr>
 
 				</tbody>                

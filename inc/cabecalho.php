@@ -1,7 +1,7 @@
 <?php
 ob_start();
+require_once "vendor/autoload.php";
 use CalorDado\Cadastro;
-require_once "./vendor/autoload.php";
 $cadastro = new Cadastro;
 
 ?>
@@ -33,14 +33,14 @@ $cadastro = new Cadastro;
 <body>
 
   <!-- Início do cabeçalho --> 
-  <header >
+  <header class="row">
     <div class="limitador">
       <a href="index.php" title="Página Inicial"><img src="img/img-logos/logo-calor-dado-min.png" alt="Calor Dado"></a>
 
     <!-- Menu de navegação -->
       <nav>
-        <h2 class="icone"><a href="" title="Abra menu de navegação">Menu &equiv;</a></h2>
-          <ul class="menu"></a>
+        <h2 class="icone "><a href="" title="Abra menu de navegação">Menu &equiv;</a></h2>
+          <ul class="menu text-center p-0 "></a>
             <li><a href="index.php" title="página inicial">Home</a></li>
             <li><a href="quemsomos.php" title="página quem somos">QUEM SOMOS</a></li>
             <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
