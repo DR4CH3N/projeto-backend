@@ -6,7 +6,7 @@ use CalorDado\Utilitarios;
 
 require_once "../inc/cabecalho-admin.php";
 $usuario = new Doacao;
- $usuario->setId($_GET['id']);
+$usuario->setId($_SESSION['id']);
 $dado = $usuario->listarUm();
 Utilitarios::dump($dado);
 

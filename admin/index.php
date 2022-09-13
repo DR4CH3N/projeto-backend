@@ -1,13 +1,19 @@
 <?php
 require_once "../inc/cabecalho-admin.php";
  ?>
-<article class="p-5 my-4 rounded-3 bg-white shadow">
+<article class="container p-5 my-4 rounded-3 bg-white shadow">
     <div class="container-fluid py-1">        
         <h2 class="display-4 ">Olá <?=$_SESSION['nome']?>!</h2>
 
         <?php if(isset($_GET['perfil-atualizado'])){?>
 			<p class="my-2 alert alert-primary text-center">
 				Dados atualizados com sucesso!
+			</p>
+        <?php } ?>
+
+        <?php if(isset($_GET['doacao-enviada'])){?>
+			<p class="my-2 alert alert-primary text-center">
+				Doação enviada!
 			</p>
         <?php } ?>
 

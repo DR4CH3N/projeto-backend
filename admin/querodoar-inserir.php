@@ -2,8 +2,6 @@
 use CalorDado\Cadastro;
 use CalorDado\Doacao;
 use CalorDado\Usuario;
-use CalorDado\Utilitarios;
-
 require_once "../inc/cabecalho-usuario.php";
 if (isset($_GET['id'])) {
 	$usuario = new Usuario;
@@ -38,6 +36,7 @@ if(isset($_POST['enviar'])){
   $doacao->setUsuarioId($_GET['id']);
   $doacao->inserir();  
   $cadastro->inserir();
+  header("location:index.php?doacao-enviada");
 }  
 $listar = new Cadastro;
 $listar->setId($_GET['id']);

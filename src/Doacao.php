@@ -17,19 +17,6 @@ final class Doacao{
         $this->conexao = $this->usuario->getConexao();
     }
 
-    public function listar():array{
-        $sql = "SELECT id, roupas, calcados, cobertores, pix FROM doacoes";
-        try{
-            $consulta = $this->conexao->prepare($sql);
-            $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-        } catch(Exception $erro){
-            die("Erro: ".$erro->getMessage());
-        }
-        return $resultado;    
-    }
-   
-
     public function inserir():void{
         $sql = "INSERT INTO doacoes(roupas, calcados, cobertores, usuario_id) VALUES (:roupas, :calcados, :cobertores, :usuario_id)";
         try {
@@ -42,6 +29,17 @@ final class Doacao{
         } catch (Exception $erro) {
             die("Erro: ".$erro->getMessage());
         }
+    }
+    public function listarDoacoes():array{
+        $sql = "SELECT SUM(roupas), SUM(calcados), SUM(cobertores), SUM(pix) FROM doacoes";
+        try{
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch(Exception $erro){
+            die("Erro: ".$erro->getMessage());
+        }
+        return $resultado;    
     }
 
 
@@ -92,27 +90,12 @@ final class Doacao{
         $this->pix = filter_var($pix, FILTER_SANITIZE_SPECIAL_CHARS);
     }
 
-    /**
-     * Get the value of usuarioId
-     *
-     * @return int
-     */
     public function getUsuarioId(): int
     {
         return $this->usuarioId;
     }
-
-    /**
-     * Set the value of usuarioId
-     *
-     * @param int $usuarioId
-     *
-     * @return self
-     */
-    public function setUsuarioId(int $usuarioId): self
+    public function setUsuarioId(int $usuarioId)
     {
-        $this->usuarioId = $usuarioId;
-
-        return $this;
+        $this->usuarioId = filter_var($usuarioId, FILTER_SANITIZE_NUMBER_INT);
     }
 }
