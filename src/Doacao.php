@@ -44,6 +44,23 @@ final class Doacao{
         }
     }
 
+    public function listarUm():array{
+        /* faze right/inner join aqui depois com a tabela usuarios */
+        $sql = "SELECT usuarios.id, usuarios.nome, SUM(doacoes.roupas), SUM(doacoes.calcados), 
+        SUM(doacoes.cobertores), doacoes.pix FROM doacoes 
+        LEFT JOIN usuarios
+        ON doacoes.usuario_id = usuarios.id";
+        
+        try{
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        } catch(Exception $erro){
+            die("Erro: ".$erro->getMessage());
+        }
+        return $resultado;    
+    }
+
 
     
    
