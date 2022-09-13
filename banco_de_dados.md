@@ -5,11 +5,11 @@
 # Criar banco de dados:
 
 ``` sql
-CREATE DATABASE calordado CHARACTER SET utf8mb4;
+CREATE DATABASE calor-dado-novo CHARACTER SET utf8mb4;
 
 ```
 
-# Criar tabelas: admin
+# Criar tabelas: admin // Tabela admin nao usaremos mais
 
 ``` SQL
 CREATE TABLE admin(
@@ -19,15 +19,18 @@ CREATE TABLE admin(
 );
 ```
 
-# Criar tabelas: contato_meu_perfil
+# Criar tabelas: cadastros
 
 ``` SQL
-CREATE TABLE cadastro(
+CREATE TABLE cadastros(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    telefone VARCHAR(14) NOT NULL,
     endereco VARCHAR(80) NOT NULL,
     cep VARCHAR(8) NOT NULL,
     cidade VARCHAR(45) NOT NULL,
     numero_casa VARCHAR(5) NOT NULL,
+    bairro VARCHAR(20) NOT NULL,
+    endereco VARCHAR(20) NOT NULL,
     usuario_id INT NOT NULL
 );
 ```
@@ -39,30 +42,34 @@ CREATE TABLE usuarios(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45) NOT NULL,
     email VARCHAR(45) UNIQUE NOT NULL,
-    senha VARCHAR(255) NOT NULL
+    senha VARCHAR(255) NOT NULL,
+    tipo ENUM('admin', 'usuario') NOT NULL
 );
 ```
-# Criar tabela: quero_doar 
+# Criar tabela: doacoes
 
 ``` SQL
 CREATE TABLE doacoes(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    doacao ENUM('roupas', 'cobertores', 'calcados') NOT NULL,
+    roupas INT(12) NOT NULL,
+    calcados INT(12) NOT NULL,
+    cobertores INT(12) NOT NULL,
+    pix VARCHAR(255) NOT NULL,
     usuario_id INT NOT NULL
 );
 ```
-# Criar relacionamento entre usuarios e contato_meu_perfil:
+# Criar relacionamento entre usuarios e cadastros:
 
 ``` SQL
-ALTER TABLE cadastro
+ALTER TABLE cadastros
     ADD CONSTRAINT fk_cadastro_usuarios
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id);
 ```
 
-# Criar relacionamento entre: quero_doar e usuarios
+# Criar relacionamento entre: doacoes e usuarios
 
 ``` SQL
-  ALTER TABLE cadastro
+  ALTER TABLE cadastros
   ADD CONSTRAINT fk_cadastro_usuarios
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id);
 ```
@@ -70,7 +77,7 @@ ALTER TABLE cadastro
 # Adicionar campo quantidade na tabela doações
 
 ``` sql
-ALTER TABLE `cadastro` ADD `Quantidade` INT NOT NULL AFTER `doacao`;
+ALTER TABLE `cadastros` ADD `Quantidade` INT NOT NULL AFTER `doacao`;
 ```
 
 ## adicionar tipo de usuario na tabela usuarios
