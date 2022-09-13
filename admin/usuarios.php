@@ -42,7 +42,7 @@ $sessao->verfificaAcessoAdmin();
 							<i class="bi bi-pencil"></i> Atualizar
 							</a>
 						
-							<a class="btn btn-danger excluir" 
+							<a class="btn excluir" 
 							href="usuario-exclui.php?id=<?=$usuario['id']?>">
 							<i class="bi bi-trash"></i> Excluir
 							</a>
