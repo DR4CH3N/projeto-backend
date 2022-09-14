@@ -34,7 +34,7 @@ if(isset($_GET['sair'])){
     <!-- Menu de navegação -->
       <nav>
         <h2 class="icone"><a href="" title="Abra menu de navegação">Menu &equiv;</a></h2>
-          <ul class="menu justify-content-end"></a>
+          <ul class="menu justify-content-end p-0"></a>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Home</a>
                 </li>

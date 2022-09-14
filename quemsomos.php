@@ -1,4 +1,5 @@
-<?php require_once "./inc/cabecalho.php"; ?>
+<?php require_once "./inc/cabecalho.php";
+ ?>
    
     <section class="container-fluid row text-center my-2 py-3 mb-5 mt-4 m-auto">
       <div class="col-lg-6 p-xxl-5">

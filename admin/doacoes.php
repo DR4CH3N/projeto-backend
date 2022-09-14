@@ -1,9 +1,11 @@
 <?php
+use CalorDado\Doacao;
 use CalorDado\Usuario;
+use CalorDado\Utilitarios;
 require_once "../inc/cabecalho-admin.php";
-$usuario = new Usuario;
-$listadeUsuarios = $usuario->listar();
 $sessao->verfificaAcessoAdmin();
+$doacao = new Doacao;
+$listadeDoacao = $doacao->listarDoacoes();
 ?>
 <div class="row container m-auto">
 	<article class="col-12 bg-white rounded shadow my-1 py-4">
@@ -28,10 +30,10 @@ $sessao->verfificaAcessoAdmin();
 				<tbody>
 
 					<tr>
-						<td><?=count($listadeUsuarios)?> </td>
-						<td> <?=count($listadeUsuarios)?></td>
-						<td> <?=count($listadeUsuarios)?> </td>
-						<td> <?=count($listadeUsuarios)?> </td>
+						<td><?=$listadeDoacao['SUM(roupas)']?></td>
+						<td><?=$listadeDoacao['SUM(cobertores)']?></td>
+						<td><?=$listadeDoacao['SUM(calcados)']?></td>
+						<td> <?=$listadeDoacao['SUM(pix)']?></td>
 					</tr>
 
 				</tbody>                

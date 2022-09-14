@@ -37,12 +37,12 @@ $sessao->verfificaAcessoAdmin();
 						<td> <?=$usuario['email']?> </td>
 						<td> <?=$usuario['tipo']?> </td>
 						<td class="text-center">
-							<a class="btn btn-warning atualizar" 
+							<a class="btn atualizar" 
 							href="usuario-atualiza.php?id=<?=$usuario['id']?>">
 							<i class="bi bi-pencil"></i> Atualizar
 							</a>
 						
-							<a class="btn btn-danger excluir" 
+							<a class="btn excluir" 
 							href="usuario-exclui.php?id=<?=$usuario['id']?>">
 							<i class="bi bi-trash"></i> Excluir
 							</a>

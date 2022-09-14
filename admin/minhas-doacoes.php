@@ -1,13 +1,11 @@
 <?php
-
 use CalorDado\Cadastro;
 use CalorDado\Doacao;
 use CalorDado\Utilitarios;
-
 require_once "../inc/cabecalho-admin.php";
-$usuario = new Doacao;
- $usuario->setId($_GET['id']);
-$dado = $usuario->listarUm();
+$doacao = new Doacao;
+$doacao->setId($_GET['id']);
+$dado = $doacao->listarUm();
 Utilitarios::dump($dado);
 
 ?>
