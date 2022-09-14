@@ -12,12 +12,10 @@ final class Cadastro {
     private string $bairro;
     private string $complemento;
     private int $usuarioId;
-    public Usuario $usuario;
     private PDO $conexao;
     
     public function __construct(){
-        $this->usuario = new Usuario;
-        $this->conexao = $this->usuario->getConexao();
+        $this->conexao = Banco::conecta();
     }
 
     public function inserir():void{
@@ -51,8 +49,7 @@ final class Cadastro {
         }
         return $resultado;    
     }
-
-    
+ 
     public function listarUm():array{
         $sql = "SELECT usuarios.id, usuarios.nome, usuarios.email, cadastros.telefone, cadastros.endereco, cadastros.cep, cadastros.cidade, cadastros.numero, cadastros.complemento, cadastros.bairro, usuario_id FROM cadastros LEFT JOIN usuarios ON cadastros.usuario_id = usuarios.id";
         try {
@@ -64,9 +61,7 @@ final class Cadastro {
         }
         return $resultado;
     }
-
     
-   
     public function getId(): int
     {
         return $this->id;
@@ -77,7 +72,6 @@ final class Cadastro {
 
     }
 
-   
     public function getEndereco(): string
     {
         return $this->endereco;
@@ -88,7 +82,6 @@ final class Cadastro {
 
     }
 
-    
     public function getCep(): string
     {
         return $this->cep;
@@ -98,7 +91,6 @@ final class Cadastro {
         $this->cep = filter_var($cep, FILTER_SANITIZE_SPECIAL_CHARS);
 
     }
-
     
     public function getCidade(): string
     {
@@ -109,7 +101,6 @@ final class Cadastro {
         $this->cidade = filter_var($cidade, FILTER_SANITIZE_SPECIAL_CHARS);
 
     }
-
     
     public function getNumero(): string
     {

@@ -1,5 +1,4 @@
 <?php require_once "./inc/cabecalho.php"; ?>
-
   <!-- Conteudo principal -->
   <main class="container-fluid my-5 py-1 text-center p-5">
     <section class="row m-auto mb-5 pb-xl-5 ">
@@ -11,7 +10,6 @@
         <img src="img/img-home/caixa-com-roupas-home.jpg" title="Caixa com luvas e roupas de frio">
       </div>
     </section>
-
     <section class="row m-auto mb-2 pb-5 flex-row-reverse">
       <div class="col-12 col-lg-6 col-xxl-6 mt-lg-5 mt-xl-3 mt-xxl-4 conteudo ">
         <h1 class="text-center mt-xl-4 pt-xxl-4 mt-xxl-2">Como funciona o nosso trabalho?</h1>
@@ -22,8 +20,6 @@
         <img src="img/img-home/recebendo-doacao-home-min.jpg" alt="Pessoa entregando caixa com roupas para outra pessoa">
       </div>
     </section>
-
   </main>
   <!-- Fim do conteudo-->
-
 <?php require_once "./inc/rodape.php"; ?>

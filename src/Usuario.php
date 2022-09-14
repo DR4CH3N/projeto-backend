@@ -119,10 +119,8 @@ final class Usuario {
       } catch (Exception $erro) { 
         die ("Erro: ". $erro->getMessage());
     } return $novaSenha;
-}
-
-
-
+    }
+   
     public function getId(): int
     {
         return $this->id;

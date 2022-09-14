@@ -11,8 +11,7 @@ final class Doacao{
     public Usuario $usuario;
     private string $pix;
 
-
-    public function __construct(){
+    public function __construct() {
         $this->usuario = new Usuario;
         $this->conexao = $this->usuario->getConexao();
     }
@@ -43,7 +42,7 @@ final class Doacao{
     }
 
     public function listarUm():array{
-        $sql = "SELECT SUM(roupas), SUM(calcados), SUM(cobertores), usuario_id FROM doacoes GROUP BY usuario_id";
+        $sql = "SELECT usuario_id, usuarios.nome, doacoes.* FROM usuarios INNER JOIN doacoes GROUP BY usuario_id ";
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->execute();
@@ -53,7 +52,7 @@ final class Doacao{
         }
         return $resultado;  
     }
-  
+
    
     public function getId(): int
     {

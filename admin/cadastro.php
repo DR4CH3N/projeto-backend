@@ -1,23 +1,15 @@
 <?php
 use CalorDado\Cadastro;
-use CalorDado\Usuario;
-use CalorDado\Utilitarios;
 require_once "../inc/cabecalho-admin.php";
 $cadastro = new Cadastro;
 $listaDeCadastro = $cadastro->listarUsuario();
-
 ?>
 <div class="row container-fluid m-auto">
 	<article class="col-12 bg-white rounded  my-1 py-4">
-		
 		<h2 class="text-center">
 		Cadastros <span class="badge bg-dark"><?=count($listaDeCadastro)?></span>
-		</h2>
-
-		
-				
+		</h2>	
 		<div class="table-responsive">
-		
 			<table class="table table-hover text-center">
 				<thead class="table-dark">
 					<tr>
@@ -30,10 +22,8 @@ $listaDeCadastro = $cadastro->listarUsuario();
                         <th>Número</th>
                         <th>Complemento</th>
                         <th>Bairro</th>
-						
 					</tr>
 				</thead>
-
 				<tbody>
 <?php foreach($listaDeCadastro as $usuario){?>
 					<tr>
@@ -46,12 +36,11 @@ $listaDeCadastro = $cadastro->listarUsuario();
                         <td> <?=$usuario['numero']?> </td>
                         <td> <?=$usuario['complemento']?></td>
                         <td> <?=$usuario['bairro']?> </td>
-				
 					</tr>
 <?php } ?>
 				</tbody>                
 			</table>
-	</div>
+		</div>
 		
 	</article>
 </div>

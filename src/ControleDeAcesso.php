@@ -1,5 +1,4 @@
 <?php
-
 namespace CalorDado;
 
 final class ControleDeAcesso {

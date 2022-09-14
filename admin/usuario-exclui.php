@@ -9,5 +9,4 @@ $usuario = new Usuario;
 $usuario->setId($_GET['id']);
 $usuario->excluir();
 header("location:usuarios.php");
-
 ?>
