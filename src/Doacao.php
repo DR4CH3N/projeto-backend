@@ -47,7 +47,7 @@ final class Doacao{
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->execute();
-            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
             die("Erro: ".$erro->getMessage());
         }
