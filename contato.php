@@ -38,11 +38,11 @@ if (isset($_POST['enviar'])) {
         // Corpo da mensagem em formato texto puro
         $mail->AltBody = "Nome: $nome \ E-mail: $email \n Telefone: $telefone: \n Mensagem: $mensagem";
         $mail->send();
-        echo 'Mensagem enviada com sucesso!';
         // echo "<script>alert('enviado')</script>"; Testando
     } catch (Exception $e) {
         echo "Ops! Deu ruim: {$mail->ErrorInfo}";
     }
+    header("location:contato.php?enviado");
 } // Final do IF
 ?>
   <!-- TITULO E DESCRIÇÃO -->
@@ -52,6 +52,11 @@ if (isset($_POST['enviar'])) {
     <p class="text-center">Você tem uma pergunta ou está interessado em trabalhar conosco e com nossa equipe? Basta preencher os campos do formulario abaixo:</p>
   </div>
 </div>
+    <?php if(isset($_GET['enviado'])){?>
+			<p class="my-2 alert alert-primary text-center">
+				Mensagem enviada!
+			</p>
+    <?php } ?>
 <!--  FORMULARIO PRA PODER INSERIR OS DADOS -->
 <div class="row m-auto ">
   <div class="col-lg-6 col-xxl-5 m-auto mt-5">

@@ -3,9 +3,9 @@ namespace CalorDado;
 use PDO, Exception;
 abstract class Banco {
     private static string $servidor = "localhost";
-    private static string $usuario = "root";
-    private static string $senha = "";
-    private static string $banco = "calor-dado-novo";
+    private static string $usuario = "suniow89_lucasmendes";
+    private static string $senha = "Luc@s4674";
+    private static string $banco = "suniow89_calordado";
     private static PDO $conexao; 
     public static function conecta():PDO{
         try {

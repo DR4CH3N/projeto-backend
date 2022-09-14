@@ -5,7 +5,6 @@ require_once "../inc/cabecalho-admin.php";
 $doacao = new Doacao;
 $doacao->setUsuarioId($_GET['id']);
 $dado = $doacao->listarUm();
-Utilitarios::dump($dado);
 ?>
 <div class="row container m-auto">
 	<article class="col-12 bg-white rounded shadow my-1 py-4">
