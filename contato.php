@@ -103,14 +103,15 @@ if (isset($_POST['enviar'])) {
     <div class="text-center">
       <h2>Localização</h2>
         <p>Av.paulista, 1500 - Bela Vista, são paulo - SP</P>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1784274189363!2d-46.65746628255615!3d-23.562034400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c925263541%3A0x4b30df73fca5a36b!2sAv.%20Paulista%2C%201500%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1653573464097!5m2!1spt-BR!2sbr" width="80%" height="485" class="border" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <article>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.178564720926!2d-46.65746628487106!3d-23.562029467502345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c925263541%3A0x4b30df73fca5a36b!2sAv.%20Paulista%2C%201500%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1663332766933!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </article>
         <!-- HEIGHT ESTAVA 485 ANTES -->
     </div>
   </div>
 </div>
 <!-- Linkando para o JS -->
-    <script src="js/contador.js"></script>
-    <script src="js/jquery-3.6.0min.js"></script>
-    <script src="js/vanilla-masker.min.js"></script>
-    <script src="js/cep.js"></script>
+<script src="js/contador.js"></script>
+<script src="js/vanilla-masker.min.js"></script>  
+<script src="js/telefone.js"></script>  
 <?php require_once "./inc/rodape.php"; ?>

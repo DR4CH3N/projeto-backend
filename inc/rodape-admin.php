@@ -1,5 +1,6 @@
 <!-- Copyright -->
-<section class="container-fluid copy py-3">
+<footer class="footer navbar-fixed-bottom">
+  <section class="container-fluid copy py-3">
     <div class="text-center">  
       <div class="col">
         <p class="">
@@ -27,8 +28,9 @@
       </symbol>
     </svg>
   </section>
+</footer>  
  <!-- FIM DO Footer -->
-<script src="js/menu.js"></script>
+<script src="../js/menu.js"></script>
 </body>
 </html>
 <?php ob_end_flush(); ?>

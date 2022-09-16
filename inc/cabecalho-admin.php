@@ -12,7 +12,7 @@ if(isset($_GET['sair'])){
 }
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"  class="h-100">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,7 +64,7 @@ if(isset($_GET['sair'])){
     </div>
 </header>
     <section class="container-fluid m-auto p-0">
-<script src="../js/menu.js"></script>
+
 
 
     

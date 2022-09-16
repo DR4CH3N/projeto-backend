@@ -31,7 +31,7 @@ if (isset($_GET['acesso_proibido'])) {
 	$feedback = "Usúario não encontrado!";
 } elseif (isset($_GET['senha_incorreta'])) {
 	$feedback = "Senha incorreta!";
-}
+} 
 ?>
 <!-- área de login -->
 <section class="row d-flex justify-content-center p-5 login ">
@@ -76,5 +76,5 @@ if (isset($_GET['acesso_proibido'])) {
     </div>  
   </div>    
 </section> 
-<?php require_once "./inc/rodape-admin.php"; ?>
+<?php require_once "./inc/rodape.php"; ?>
  

@@ -65,7 +65,4 @@ if (isset($_GET['id'])) {
     </div>
   </div>
 </section>
-<script src="js/jquery-3.6.0min.js"></script>
-<script src="js/vanilla-masker.min.js"></script>
-<script src="js/cep.js"></script>
 <?php require_once "./inc/rodape.php"; ?>

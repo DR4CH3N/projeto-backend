@@ -3,6 +3,8 @@ require_once "./inc/cabecalho.php";
 
 use CalorDado\ControleDeAcesso;
 use CalorDado\Usuario;
+use CalorDado\Utilitarios;
+
 require_once "./vendor/autoload.php";
 $usuario = new Usuario;
 
@@ -14,17 +16,34 @@ if(isset($_POST['inscrever'])){
     $usuario->setSenha($usuario->codificaSenha($_POST['senha']));
     $usuario->inserir();
     $dados = $usuario->buscar();
+    /* if($dados['email'] === $_POST['email']){
+      header("location:cadastro.php?ja_existe");
+    } */
+    
     $sessao = new ControleDeAcesso;
     $sessao->login($dados['id'], $dados['nome'], $dados['tipo']);
     header("location:admin/index.php?cadastrado");
+  } else {
+    header("location:cadastro.php?senhas_diferentes");
   }
 }
+
 ?>
   <!-- área de login -->
   <section class="row d-flex justify-content-center p-5 login ">
+  <?php if(isset($_GET['ja_existe'])){?>
+			<p class="my-2 alert alert-primary text-center">
+				E-mail já existe!
+			</p>
+    <?php } ?>
+    <?php if(isset($_GET['senhas_diferentes'])){?>
+			<p class="my-2 alert alert-primary text-center">
+				Senhas não estão iguais!
+			</p>
+    <?php } ?>
     <div class=" row delimagens text-center col-lg-6 col-xxl-4 bg-white rounded-start">
-      <h1 class="mb-4 mt-5">Bem-Vindo de volta!</h1>
-      <p class="p-4">Para se manter conectado conosco faça login com suas informações pessoais.</p>
+      <h1 class="mb-4 mt-5">Bem-Vindo à area de cadastro!</h1>
+      <p class="p-4">Faça seu cadastro com suas informações pessoais.</p>
       <img src="img/icones/img-login-desk.png" alt="">  
     </div>
     <div class="row bg-black col-12 col-md-8 col-lg-6 col-xxl-4 rounded-end">

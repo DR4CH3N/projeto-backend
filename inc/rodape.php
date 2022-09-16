@@ -1,6 +1,6 @@
 </section>
 <!-- Início Footer -->
-<footer class="text-center ">
+<footer class="footer text-center ">
   <section class="container-fluid row m-auto border-top">
     <div class="col-md-4 col-xl-4 col-xxl-4 mt-5 pt-2 ms-md-3 ms-xl-0 ms-xxl-4 ps-xxl-5 pt-xxl-2">
       <img src="img/img-logos/logo-calor-dado-min.png" alt="Logo-calor-dado">
@@ -69,7 +69,7 @@
   </svg>
 </section>
 <!-- FIM DO Footer -->
-<script src="js/menu.js"></script>
+<script src="./js/menu.js"></script>
 </body>
 </html>
 <?php ob_end_flush(); ?>
