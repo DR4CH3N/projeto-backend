@@ -41,5 +41,5 @@ if(isset($_POST['atualizar'])){
 		</form>
 	</article>
 </div>
-
+<?php require_once "../inc/rodape-admin.php"; ?>
 

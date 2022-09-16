@@ -1,8 +1,11 @@
 <?php
 require_once "./inc/cabecalho.php";
+
+use CalorDado\ControleDeAcesso;
 use CalorDado\Usuario;
 require_once "./vendor/autoload.php";
 $usuario = new Usuario;
+
 if(isset($_POST['inscrever'])){
   $usuario->setNome($_POST['nome']);
   $usuario->setEmail($_POST['email']);
@@ -10,7 +13,10 @@ if(isset($_POST['inscrever'])){
   if($_POST['senha'] === $_POST['senha-confirma']) {
     $usuario->setSenha($usuario->codificaSenha($_POST['senha']));
     $usuario->inserir();
-    header("location:login.php");
+    $dados = $usuario->buscar();
+    $sessao = new ControleDeAcesso;
+    $sessao->login($dados['id'], $dados['nome'], $dados['tipo']);
+    header("location:admin/index.php?cadastrado");
   }
 }
 ?>

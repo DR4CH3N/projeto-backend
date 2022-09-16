@@ -49,3 +49,4 @@ $sessao->verfificaAcessoAdmin();
 	</article>
 </div>
 <script src="../js/confirma.js"></script>
+<?php require_once "../inc/rodape-admin.php"; ?>

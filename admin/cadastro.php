@@ -44,4 +44,4 @@ $listaDeCadastro = $cadastro->listarUsuario();
 		
 	</article>
 </div>
-
+<?php require_once "../inc/rodape-admin.php"; ?>

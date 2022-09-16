@@ -32,4 +32,4 @@ $listadeDoacao = $doacao->listarDoacoes();
 	</div>
 	</article>
 </div>
-
+<?php require_once "../inc/rodape-admin.php"; ?>

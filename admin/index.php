@@ -16,6 +16,11 @@ require_once "../inc/cabecalho-admin.php";
 				Doação enviada!
 			</p>
         <?php } ?>
+        <?php if(isset($_GET['cadastrado'])){?>
+		    <p class="my-2 alert alert-warning text-center">
+			    Cadastrado com sucesso!
+		    </p>
+        <?php } ?>
 
         <p class="fs-5">Você está no <b>painel de controle e administração</b> do
 		site Calor Dado e seu <b>nível de acesso</b> é <span class="badge bg-dark"> <?=$_SESSION['tipo']?> </span>.</p>
@@ -51,6 +56,6 @@ require_once "../inc/cabecalho-admin.php";
         </div>
     </div>
 </article>
-
+<?php require_once "../inc/rodape-admin.php"; ?>
 
 
