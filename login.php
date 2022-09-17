@@ -77,4 +77,3 @@ if (isset($_GET['acesso_proibido'])) {
   </div>    
 </section> 
 <?php require_once "./inc/rodape.php"; ?>
- 

@@ -36,12 +36,13 @@ if(isset($_GET['sair'])){
       <nav>
         <h2 class="icone"><a href="" title="Abra menu de navegação">Menu &equiv;</a></h2>
           <ul class="menu"></a>
-            <li><a href="../index.php" title="página inicial">Home</a></li>
-            <li><a href="../quemsomos.php" title="página quem somos">QUEM SOMOS</a></li>
-            <li><a href="../contato.php" title="página contato">CONTATO</a></li>
-            <li><a href="../admin/" title="página quero doar">Doações</a></li>
+          <li><a href="../index.php" title="página inicial">Home</a></li>
+            <li><a href="../quemsomos.php" title="página quem somos">Sobre</a></li>
+            <li><a href="../querodoar.php" title="página quero doar">Doe</a></li>
+            <li><a href="../contato.php" title="página contato">Contato</a></li>
+            <li><a href="admin/index.php" title="página quero doar">Doações</a></li>
             <li class="nav-item">
-                <a class="nav-link fw-bold" href="?sair"> <i class="bi bi-x-circle"></i> Sair</a>
+              <a class="nav-link fw-bold" href="?sair"> <i class="bi bi-x-circle"></i> Sair</a>
             </li>
           </ul>
       </nav>

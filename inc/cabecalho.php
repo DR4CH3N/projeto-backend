@@ -1,8 +1,11 @@
 <?php
+use CalorDado\ControleDeAcesso;
 ob_start();
 require_once "vendor/autoload.php";
-use CalorDado\Cadastro;
-$cadastro = new Cadastro;
+$sessao = new ControleDeAcesso;
+if(isset($_GET['sair'])){
+    $sessao->logout();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br"  class="h-100">
@@ -33,10 +36,10 @@ $cadastro = new Cadastro;
         <h2 class="icone "><a href="" title="Abra menu de navegação">Menu &equiv;</a></h2>
           <ul class="menu text-center p-0 "></a>
             <li><a href="index.php" title="página inicial">Home</a></li>
-            <li><a href="quemsomos.php" title="página quem somos">QUEM SOMOS</a></li>
-            <li><a href="querodoar.php" title="página quero doar">QUERO DOAR</a></li>
-            <li><a href="contato.php" title="página contato">CONTATO</a></li>
-            <li><a class="botao"  href="login.php">Entrar</a></li>
+            <li><a href="quemsomos.php" title="página quem somos">Sobre</a></li>
+            <li><a href="querodoar.php" title="página quero doar">Doe</a></li>
+            <li><a href="contato.php" title="página contato">Contato</a></li>
+            <li><a class="botao"  href="login.php">Entrar</a></li> 
           </ul>
       </nav>
     </div>
